@@ -1,0 +1,276 @@
+html {
+    direction: rtl;
+}
+
+.hero-1 .scroll-down .hero-scroll-wrap:before {
+    right: 50% !important;
+}
+
+.ms-2 {
+    margin-left: unset !important;
+    margin-right: .5rem !important;
+}
+.fa-light, .fa-regular {
+    transform: rotateY(180deg);
+}
+#testi-sec .fa-arrow-left,#testi-sec .fa-arrow-right {
+    transform: rotateY(180deg);
+}
+
+.testiSlide1 .icon-box {
+    right: unset !important;
+    left: 72px !important;
+}
+
+/* .title-area,
+.title-area .text-anime,
+.media-body,
+.fs-18 {
+    text-align: right !important;
+} */
+.choose-area .title-area {
+    text-align: right !important;
+}
+
+.th-btn img {
+    margin-right: unset !important;
+    margin-left: 8px !important;
+}
+
+.th-mobile-menu ul li a {
+    padding-left: unset !important;
+    padding-right: 20px !important;
+    text-align: right !important;
+}
+.th-menu-wrapper .th-menu-toggle {
+    right: unset !important;
+    left: -16.5px !important;
+}
+.th-mobile-menu ul li a:before {
+    left: unset !important;
+    right: 0 !important;
+    margin-right: unset !important;
+    margin-left: 10px !important;
+    transform: rotate(180deg);
+}
+
+.breadcumb-menu {
+    display: flex;
+    justify-content: center;
+}
+.breadcumb-menu li {
+    display: flex;
+    gap: 8px;
+}
+.breadcumb-menu li:after {
+    margin-right: unset !important;
+    margin-left: 10px !important;
+    transform: rotate(180deg);
+}
+
+.header-links ul, .header-links ul li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.header-links li a {
+    direction: ltr !important;
+    display: flex;
+}
+.header-links li > i {
+    margin-right: unset !important;
+    margin-left: 6px !important;
+}
+.header-links li:not(:last-child) {
+    margin-right: unset !important;
+    margin-left: 18px !important;
+}
+
+.header-layout1 .th-btn:not(:last-child) {
+    margin-right: unset !important;
+    margin-left: 10px !important;
+}
+
+.main-menu ul li:first-child {
+    margin-left: 14px !important;
+    margin-right: 0 !important;
+}
+.main-menu ul li:last-child {
+    margin-right: 14px !important;
+    margin-left: 0 !important;
+}
+.main-menu > ul > li {
+    margin: 0 14px !important;
+}
+
+.about-wrapp {
+    right: unset !important;
+    left: -10% !important;
+}
+
+.hero-1 .slider-controller {
+    right: unset !important;
+    left: 66px !important;
+}
+
+.header-button .search-form button {
+    right: unset !important;
+    left: 15px !important;
+}
+
+.choose-img-box .img2 {
+    right: unset !important;
+    left: -45px !important;
+}
+.choose-img-box .img3 {
+    left: unset !important;
+    right: 40% !important;
+}
+
+.accordion-card .accordion-button:after {
+    right: unset !important;
+    left: 30px !important;
+}
+.blog-meta span, .blog-meta a {
+    margin-right: unset !important;
+    margin-left: 32px !important;
+}
+.blog-meta span i, .blog-meta a i {
+    margin-right: unset !important;
+    margin-left: 6px !important;
+}
+
+.footer-layout2 .footer-widget .th-widget-about:before {
+    right: unset !important;
+    left: -40px !important;
+}
+
+.footer-layout2 .call-info {
+    margin-left: unset !important;
+    margin-right: auto !important;
+}
+
+@media (min-width: 992px) {
+    .text-lg-end {
+        text-align: left !important;
+    }
+}
+
+.social-new .team-social {
+    right: unset !important;
+    left: 15px !important;
+}
+
+.hero-1 .social-links {
+    left: unset !important;
+    right: -5.5% !important;
+}
+@media (max-width: 1899px) {
+    .hero-1 .social-links {
+        left: unset !important;
+        right: -8% !important;
+    }
+}
+
+.testiSlide2 .icon-box {
+    right: unset !important;
+    left: 72px !important;
+}
+.marquee, .call-info_link, .call-info .call-link, .header-info_link.num {
+    direction: ltr !important;
+    text-align: right !important;
+}
+
+.img-box4 .about-wrapp {
+    left: unset !important;
+    right: -10% !important;
+}
+@media (max-width: 1799px) {
+    .img-box4 .about-wrapp {
+        left: unset !important;
+        right: 0 !important;
+    }
+}
+
+.feature-card {
+    min-height: 351px !important;
+  }
+
+.checklist ul,
+.accordion-card .accordion-button {
+    text-align: right !important;
+}
+.checklist li {
+    padding-left: unset !important;
+    padding-right: 38px !important;
+}
+.checklist ul {
+    padding-left: unset !important;
+    padding-right: 0 !important;
+}
+.checklist li:before {
+    left: unset !important;
+    right: 0 !important;
+    margin-right: unset !important;
+    margin-left: 10px !important;
+}
+.about-wrapper.style2 .video-img2 {
+    margin-right: unset !important;
+    margin-left: -80px !important;
+}
+
+.form-group > i {
+    right: unset !important;
+    left: 25px !important;
+}
+[class*="col-"].form-group > i {
+    left: calc((var(--bs-gutter-x) / 2) + 25px) !important;
+}
+
+.appointment-form .nice-select:after {
+    right: unset !important;
+    left: 30px !important;
+}
+input[type=date] {
+    text-align: right !important;
+    padding: 0 45px 0 25px !important;
+}
+
+.scroll-top {
+    right: unset !important;
+    left: 30px !important;
+}
+.social-btn {
+    right: unset !important;
+    left: 15px !important;
+}
+.social-btn .nav-content{
+    transform: rotate(135deg) !important;
+}
+.nav-content span a {
+    transform: rotate(225deg) !important;
+}
+
+.footer-layout2 .social-links .title {
+    margin-right: unset !important;
+    margin-left: 16px !important;
+}
+.footer-layout2 .social-links a {
+    margin: 0 0 0 10px !important;
+}
+.footer-info span {
+    direction: ltr !important;
+}
+
+.newsletter-form .th-btn {
+    right: unset !important;
+    left: 0 !important;
+}
+
+.footer-widget.widget_meta a, .footer-widget.widget_pages a, .footer-widget.widget_archive a, .footer-widget.widget_categories a, .footer-widget.widget_nav_menu a {
+    padding: 0 28px 0 0 !important;
+}
+.footer-widget.widget_meta a:before, .footer-widget.widget_pages a:before, .footer-widget.widget_archive a:before, .footer-widget.widget_categories a:before, .footer-widget.widget_nav_menu a:before {
+    left: unset !important;
+    right: 0 !important;
+}
