@@ -252,6 +252,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     form.addEventListener("submit", (e) => {
       e.preventDefault();
+      const serviceSelect = form.querySelector('select[name="service"]');
+      const nameInput = form.querySelector('input[name="name"]');
+      const phoneInput = form.querySelector('input[name="phone"]');
+
+      const flagInvalid = (fieldWrap) => {
+        if (!fieldWrap) return;
+        fieldWrap.classList.add("cs-invalid", "cd-invalid");
+        fieldWrap.scrollIntoView({ behavior: "smooth", block: "center" });
+        setTimeout(() => fieldWrap.classList.remove("cs-invalid", "cd-invalid"), 1600);
+      };
+
+      if (nameInput && !nameInput.value.trim()) { nameInput.focus(); return; }
+      if (phoneInput && !phoneInput.value.trim()) { phoneInput.focus(); return; }
+      if (serviceSelect && !serviceSelect.value) {
+        flagInvalid(serviceSelect.closest(".cs-wrap") || serviceSelect);
+        return;
+      }
+      if (dateInput && !dateInput.value) {
+        flagInvalid(dateInput.closest(".cd-wrap") || dateInput);
+        return;
+      }
       if (timeHidden && dateInput && dateInput.value && !timeHidden.value) {
         slotsWrap && slotsWrap.scrollIntoView({ behavior: "smooth", block: "center" });
         return;

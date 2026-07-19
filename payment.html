@@ -98,27 +98,52 @@
           <div class="pay-tabs">
             <button class="pay-tab active" data-method="card"><i class="fa-regular fa-credit-card"></i> Card</button>
             <button class="pay-tab" data-method="vodafone"><i class="fa-solid fa-mobile-screen"></i> Vodafone Cash</button>
-            <button class="pay-tab" data-method="fawry"><i class="fa-solid fa-store"></i> Fawry</button>
+            <button class="pay-tab" data-method="instapay"><i class="fa-solid fa-arrow-right-arrow-left"></i> InstaPay</button>
           </div>
 
           <form id="paymentForm">
             <div class="pay-card-form active">
               <div class="card-visual">
-                <div class="chip"></div>
-                <div class="num">•••• •••• •••• ••••</div>
-                <div class="bottom-row"><span>CARD HOLDER</span><span>EXPIRES</span></div>
+                <div class="top-row">
+                  <div class="chip"></div>
+                  <span class="brand-mark">Salam Pay</span>
+                </div>
+                <div class="num" id="cvNumber">•••• •••• •••• ••••</div>
+                <div class="bottom-row">
+                  <div><span class="cv-label">CARD HOLDER</span><span class="cv-value" id="cvHolder">YOUR NAME</span></div>
+                  <div><span class="cv-label">EXPIRES</span><span class="cv-value" id="cvExpiry">MM/YY</span></div>
+                </div>
               </div>
               <input class="field2" type="text" id="cardNumber" placeholder="Card Number" inputmode="numeric" required />
               <div class="form-row2" style="margin-bottom:16px;">
                 <input class="field2" type="text" id="cardExpiry" placeholder="MM/YY" maxlength="5" required />
                 <input class="field2" type="text" placeholder="CVC" maxlength="4" inputmode="numeric" required />
               </div>
-              <input class="field2" type="text" placeholder="Cardholder Name" required />
+              <input class="field2" type="text" id="cardHolder" placeholder="Cardholder Name" required />
             </div>
 
-            <div class="pay-note" style="display:none;">
-              <i class="fa-solid fa-circle-info" style="color:var(--navy);"></i>
-              <span></span>
+            <div class="transfer-box" data-method-box="vodafone" style="display:none;">
+              <div class="transfer-row">
+                <div>
+                  <span class="transfer-label">Transfer to (Vodafone Cash)</span>
+                  <span class="transfer-value">015 55 914 029</span>
+                </div>
+                <button type="button" class="copy-btn" data-copy="01555914029"><i class="fa-regular fa-copy"></i> Copy</button>
+              </div>
+              <p class="transfer-hint">Send the total amount to this number via Vodafone Cash, then enter your transaction reference below to confirm.</p>
+              <input class="field2" type="text" placeholder="Transaction reference / last 4 digits" style="margin-bottom:0;" />
+            </div>
+
+            <div class="transfer-box" data-method-box="instapay" style="display:none;">
+              <div class="transfer-row">
+                <div>
+                  <span class="transfer-label">Send via InstaPay to</span>
+                  <span class="transfer-value">@SalamClinic</span>
+                </div>
+                <button type="button" class="copy-btn" data-copy="@SalamClinic"><i class="fa-regular fa-copy"></i> Copy</button>
+              </div>
+              <p class="transfer-hint">Use your bank's InstaPay app to send the total amount to this account, then enter the sender name below to confirm.</p>
+              <input class="field2" type="text" placeholder="Sender account name" style="margin-bottom:0;" />
             </div>
 
             <button class="btn btn-pink" type="submit" id="payBtn" style="width:100%;justify-content:center;margin-top:22px;">Pay Now <i class="fa-solid fa-lock"></i></button>

@@ -99,7 +99,7 @@
             <input class="field2" type="email" name="email" placeholder="Email address" />
           </div>
           <div class="form-row2" style="margin-bottom:16px;">
-            <select class="field2" name="service" required>
+            <select class="field2" name="service" data-cs required>
               <option value="" disabled selected>Select Service / Reason for Visit</option>
             <optgroup label="Bariatric Surgery">
               <option>Gastric Sleeve Surgery</option>
@@ -116,7 +116,7 @@
             <option>General Consultation</option>
             <option>Follow-up Visit</option>
             </select>
-            <select class="field2" name="source">
+            <select class="field2" name="source" data-cs>
               <option value="" disabled selected>How did you hear about us?</option>
             <option>Facebook</option>
             <option>Instagram</option>
@@ -129,7 +129,7 @@
             </select>
           </div>
           <input class="field2" type="tel" name="phone" placeholder="Phone number" required />
-          <input class="field2" type="date" name="date" required />
+          <input class="field2" type="date" name="date" data-cd data-placeholder="Select a date" required />
           <div class="time-slots-wrap" style="display:none; margin-bottom:16px;">
             <label class="slot-label">Available Times</label>
             <div class="time-slots"></div>
@@ -232,5 +232,6 @@
   </div>
 
   <script src="assets/js/site-v2.js"></script>
+  <script src="assets/js/custom-fields.js"></script>
 </body>
 </html>
