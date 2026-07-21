@@ -186,33 +186,35 @@ body { padding-top: 96px; }
   border-radius: 26px 26px 0 0;
   transform: translateY(100%);
   transition: transform .4s cubic-bezier(.32,.72,0,1);
-  max-height: 92vh; overflow-y: auto;
+  height: 80vh; max-height: 80vh; overflow-y: auto;
   padding-bottom: calc(var(--safe-b) + 12px);
   box-shadow: 0 -20px 60px -20px rgba(0,0,0,.5);
+  display: flex;
+  flex-direction: column;
 }
 .bottom-sheet.open { transform: translateY(0); }
-.sheet-handle { width: 36px; height: 4px; border-radius: 100px; background: rgba(255,255,255,.25); margin: 10px auto 0; }
-.sheet-top { display: flex; align-items: center; justify-content: space-between; padding: 12px 20px 4px; }
+.sheet-handle { width: 36px; height: 4px; border-radius: 100px; background: rgba(255,255,255,.25); margin: 10px auto 0; flex-shrink: 0; }
+.sheet-top { display: flex; align-items: center; justify-content: space-between; padding: 12px 20px 4px; flex-shrink: 0; }
 .sheet-logo { height: 28px; filter: brightness(0) invert(1); }
 .sheet-close {
   width: 30px; height: 30px; border-radius: 50%; background: rgba(255,255,255,.08); color: #fff;
   display: flex; align-items: center; justify-content: center; font-size: 13px;
 }
-.sheet-nav { padding: 4px 20px 0; display: flex; flex-direction: column; gap: 0; }
+.sheet-nav { padding: 4px 20px 0; display: flex; flex-direction: column; justify-content: center; gap: 0; flex: 1; min-height: 0; }
 .sheet-nav a {
   display: flex; align-items: center; justify-content: space-between; padding: 10px 4px;
   font-family: var(--f-serif); font-size: 16.5px; border-bottom: 1px solid rgba(255,255,255,.08);
 }
 .sheet-nav a i { font-size: 12px; color: var(--pink); }
 .sheet-nav a.active { color: var(--pink); }
-.sheet-cta-row { padding: 14px 20px 0; }
+.sheet-cta-row { padding: 14px 20px 0; flex-shrink: 0; }
 .sheet-cta-row .btn { width: 100%; justify-content: center; padding: 13px 20px; }
-.sheet-contact { padding: 10px 20px 0; display: flex; flex-direction: row; gap: 14px; flex-wrap: wrap; }
+.sheet-contact { padding: 10px 20px 0; display: flex; flex-direction: row; gap: 14px; flex-wrap: wrap; flex-shrink: 0; }
 .sheet-contact a { font-size: 12.5px; color: rgba(255,255,255,.75); display: flex; align-items: center; gap: 6px; }
 .sheet-contact i { color: var(--pink); width: 14px; }
 .sheet-bottom {
   margin-top: 12px; padding: 12px 20px 0 20px; border-top: 1px solid rgba(255,255,255,.08);
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;
 }
 .sheet-social { display: flex; gap: 6px; }
 .sheet-social a {
@@ -428,20 +430,53 @@ html[dir="rtl"] .bio-images .badge-exp { right: auto; left: -22px; }
 /* ============ Certificates badges ============ */
 .cert-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .cert-card {
-  background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: 32px 26px; text-align: center;
-  transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease;
+  background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden; text-align: center;
+  transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease; cursor: pointer;
 }
 .cert-card:hover { transform: translateY(-6px); box-shadow: 0 26px 50px -26px rgba(20,26,46,.28); }
-.cert-card .seal {
-  width: 68px; height: 68px; border-radius: 50%; margin: 0 auto 20px; position: relative;
-  background: conic-gradient(from 180deg, var(--gold), #f3d98a, var(--gold));
-  display: flex; align-items: center; justify-content: center;
+.cert-card .cert-thumb { aspect-ratio: 4/3; overflow: hidden; position: relative; background: var(--paper-2); }
+.cert-card .cert-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.cert-card:hover .cert-thumb img { transform: scale(1.06); }
+.cert-card .cert-thumb .zoom-hint {
+  position: absolute; inset: 0; background: rgba(9,13,24,.35); opacity: 0; transition: opacity .25s ease;
+  display: flex; align-items: center; justify-content: center; color: #fff; font-size: 20px;
 }
-.cert-card .seal::before { content: ""; position: absolute; inset: 4px; border-radius: 50%; background: var(--navy-deep); }
-.cert-card .seal i { position: relative; z-index: 1; color: var(--gold); font-size: 24px; }
-.cert-card h4 { font-size: 16px; margin-bottom: 8px; line-height: 1.3; }
-.cert-card p { font-size: 12.5px; color: var(--ink-soft); font-family: var(--f-sans); }
+.cert-card:hover .cert-thumb .zoom-hint { opacity: 1; }
+.cert-card .cert-body { padding: 20px 18px 24px; }
+.cert-card h4 { font-size: 15.5px; margin-bottom: 4px; line-height: 1.3; }
+.cert-card p { font-size: 12px; color: var(--ink-soft); font-family: var(--f-sans); margin: 0; }
 @media (max-width: 900px) { .cert-grid { grid-template-columns: 1fr; } }
+
+/* ============ Certificate Lightbox ============ */
+.cert-lightbox-backdrop {
+  position: fixed; inset: 0; background: rgba(5,7,14,.9); z-index: 420;
+  opacity: 0; pointer-events: none; transition: opacity .3s ease;
+  display: flex; align-items: center; justify-content: center; padding: 20px;
+}
+.cert-lightbox-backdrop.open { opacity: 1; pointer-events: auto; }
+.cert-lightbox-box { position: relative; width: min(600px, 100%); text-align: center; }
+.cert-lightbox-box img {
+  width: 100%; max-height: 74vh; object-fit: contain; border-radius: 18px; background: #fff;
+  box-shadow: 0 40px 90px -30px rgba(0,0,0,.6);
+}
+.cert-lightbox-caption { color: #fff; margin-top: 18px; font-family: var(--f-serif); font-size: 17px; }
+.cert-lightbox-close {
+  position: absolute; top: -50px; right: 0; width: 40px; height: 40px; border-radius: 50%;
+  background: rgba(255,255,255,.12); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 16px;
+}
+.cert-lightbox-close:hover { background: var(--pink); }
+.cert-lightbox-nav {
+  position: absolute; top: 50%; transform: translateY(-50%); width: 46px; height: 46px; border-radius: 50%;
+  background: rgba(255,255,255,.1); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 16px;
+}
+.cert-lightbox-nav:hover { background: var(--pink); }
+.cert-lightbox-prev { left: -60px; }
+.cert-lightbox-next { right: -60px; }
+@media (max-width: 767px) {
+  .cert-lightbox-prev { left: 6px; }
+  .cert-lightbox-next { right: 6px; }
+  .cert-lightbox-close { top: -44px; }
+}
 
 /* ============ Feature cards (Vision / Mission / Goals) ============ */
 .feature-grid2 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
@@ -1112,6 +1147,15 @@ html[dir="rtl"] .hero-card.doctor { left: auto; right: -24px; }
 html[dir="rtl"] .hero-card.rating { right: auto; left: -18px; }
 html[dir="rtl"] .bottom-sheet, html[dir="rtl"] .sheet-backdrop { left: 0; right: 0; }
 html[dir="rtl"] .dock-links a::after { left: auto; right: 0; }
-html[dir="rtl"] .svc-card a i, html[dir="rtl"] .btn i, html[dir="rtl"] .blog-card2 a.readmore2 i,
-html[dir="rtl"] .fab-top i { transform: scaleX(-1); }
 html[dir="rtl"] .post-body2 ul li::before { order: 2; }
+
+/* Directional icons: Arabic markup already uses the mirrored Font Awesome glyph
+   (e.g. fa-arrow-left instead of fa-arrow-right) to match reading direction, so no
+   CSS transform is applied to those — a transform on top of an already-mirrored
+   glyph would flip it back the wrong way. Only icons that are generated by shared
+   JS (same markup for both languages) or that have no mirrored glyph equivalent
+   are flipped here. */
+html[dir="rtl"] .cd-nav-btn i,
+html[dir="rtl"] .fa-arrow-up-right {
+  transform: scaleX(-1);
+}

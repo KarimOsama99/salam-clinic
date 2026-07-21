@@ -3,22 +3,30 @@ document.addEventListener("DOMContentLoaded", () => {
     "Gastric Sleeve Surgery": 500, "Gastric Bypass Surgery": 500, "Revision Surgeries": 600,
     "Intragastric Balloon": 400, "Hernia Repair": 350, "Gallbladder Surgery": 400,
     "Appendectomy": 350, "Thyroid & Parathyroid Surgery": 450,
-    "General Consultation": 300, "Follow-up Visit": 200
+    "General Consultation": 300, "Follow-up Visit": 200,
+    /* Arabic equivalents, used when the booking form was submitted from the Arabic pages */
+    "تكميم المعدة": 500, "تحويل مسار المعدة": 500, "جراحات تصحيحية": 600,
+    "البالون المعدي": 400, "علاج الفتق": 350, "جراحة المرارة": 400,
+    "استئصال الزائدة الدودية": 350, "جراحة الغدة الدرقية والجار درقية": 450,
+    "استشارة عامة": 300, "زيارة متابعة": 200
   };
   const DEFAULT_FEE = 300;
+  const isRTL = document.documentElement.dir === "rtl";
+  const CURRENCY = isRTL ? "جنيه" : "EGP";
 
   let booking = {};
   try { booking = JSON.parse(sessionStorage.getItem("salamBooking") || "{}"); } catch (e) { booking = {}; }
 
   const fee = SERVICE_FEES[booking.service] || DEFAULT_FEE;
+  const dash = "—";
 
   const setText = (sel, val) => { const el = document.querySelector(sel); if (el) el.textContent = val; };
-  setText("#sumName", booking.name || "—");
-  setText("#sumService", booking.service || "General Consultation");
-  setText("#sumDate", booking.date || "—");
-  setText("#sumTime", booking.time || "—");
-  setText("#sumFee", fee + " EGP");
-  setText("#sumTotal", fee + " EGP");
+  setText("#sumName", booking.name || dash);
+  setText("#sumService", booking.service || (isRTL ? "استشارة عامة" : "General Consultation"));
+  setText("#sumDate", booking.date || dash);
+  setText("#sumTime", booking.time || dash);
+  setText("#sumFee", fee + " " + CURRENCY);
+  setText("#sumTotal", fee + " " + CURRENCY);
 
   /* Payment method tabs */
   const tabs = document.querySelectorAll(".pay-tab");
@@ -46,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const done = () => {
         const original = btn.innerHTML;
         btn.classList.add("copied");
-        btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied';
+        btn.innerHTML = isRTL ? '<i class="fa-solid fa-check"></i> تم النسخ' : '<i class="fa-solid fa-check"></i> Copied';
         setTimeout(() => { btn.classList.remove("copied"); btn.innerHTML = original; }, 1600);
       };
       if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -83,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   if (cardHolder) {
     cardHolder.addEventListener("input", () => {
-      if (cvHolder) cvHolder.textContent = cardHolder.value.trim().toUpperCase() || "YOUR NAME";
+      if (cvHolder) cvHolder.textContent = cardHolder.value.trim().toUpperCase() || (isRTL ? "اسمك" : "YOUR NAME");
     });
   }
 
@@ -97,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   payForm && payForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    if (payBtn) { payBtn.disabled = true; payBtn.innerHTML = 'Processing <i class="fa-solid fa-circle-notch fa-spin"></i>'; }
+    if (payBtn) { payBtn.disabled = true; payBtn.innerHTML = isRTL ? 'جاري المعالجة <i class="fa-solid fa-circle-notch fa-spin"></i>' : 'Processing <i class="fa-solid fa-circle-notch fa-spin"></i>'; }
     setTimeout(() => {
       payWrap && payWrap.classList.add("hide");
       summaryEl && summaryEl.classList.add("hide");

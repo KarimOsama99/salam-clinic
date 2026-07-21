@@ -11,12 +11,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const positionPanel = (trigger, panel) => {
     const rect = trigger.getBoundingClientRect();
+    const isDatePanel = panel.classList.contains("cd-panel");
+    if (!isDatePanel) panel.style.width = rect.width + "px";
+    const panelWidth = isDatePanel ? Math.min(300, window.innerWidth - 16) : rect.width;
     const panelHeight = panel.offsetHeight || 280;
     const spaceBelow = window.innerHeight - rect.bottom;
     const openUpward = spaceBelow < panelHeight + 16 && rect.top > panelHeight + 16;
 
-    panel.style.left = Math.max(8, Math.min(rect.left, window.innerWidth - rect.width - 8)) + "px";
-    panel.style.width = rect.width + "px";
+    panel.style.left = Math.max(8, Math.min(rect.left, window.innerWidth - panelWidth - 8)) + "px";
     if (openUpward) {
       panel.style.top = "auto";
       panel.style.bottom = (window.innerHeight - rect.top + 8) + "px";

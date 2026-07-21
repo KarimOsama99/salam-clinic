@@ -33,7 +33,7 @@
         </nav>
         <div class="dock-actions">
           <a href="tel:01555914029" class="dock-icon-btn" aria-label="Call the clinic"><i class="fa-solid fa-phone"></i></a>
-          <a href="index-ar.html" class="dock-lang"><i class="fa-solid fa-globe"></i> AR</a>
+          <a href="about-ar.html" class="dock-lang"><i class="fa-solid fa-globe"></i> AR</a>
           <a href="appointment.html" class="dock-cta">Book Now</a>
           <button class="dock-menu-btn" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
         </div>
@@ -74,7 +74,7 @@
         <a href="#" aria-label="Snapchat"><i class="fa-brands fa-snapchat"></i></a>
         <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
       </div>
-      <a href="index-ar.html" class="sheet-lang">العربية</a>
+      <a href="about-ar.html" class="sheet-lang">العربية</a>
     </div>
   </div>
 
@@ -127,40 +127,63 @@
         <span class="eyebrow" style="justify-content:center;">Certificates</span>
         <h2>Our certifications<br>& accreditations</h2>
       </div>
-      <div class="cert-grid">
-        <div class="cert-card reveal">
-          <div class="seal"><i class="fa-solid fa-award"></i></div>
-          <h4>Egyptian Medical Syndicate License</h4>
-          <p>Licensed to practice medicine and surgery in Egypt</p>
+      <div class="cert-grid" data-cert-gallery>
+        <div class="cert-card reveal" data-cert-item data-title="Egyptian Medical Syndicate License">
+          <div class="cert-thumb"><img src="assets/img/normal/about_1_1.jpg" alt="Egyptian Medical Syndicate License" loading="lazy" /><div class="zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+          <div class="cert-body">
+            <h4>Egyptian Medical Syndicate License</h4>
+            <p>Licensed to practice medicine and surgery in Egypt</p>
+          </div>
         </div>
-        <div class="cert-card reveal">
-          <div class="seal"><i class="fa-solid fa-certificate"></i></div>
-          <h4>Fellowship of General Surgery</h4>
-          <p>Advanced specialist qualification in general surgery</p>
+        <div class="cert-card reveal" data-cert-item data-title="Fellowship of General Surgery">
+          <div class="cert-thumb"><img src="assets/img/normal/about_1_3.jpg" alt="Fellowship of General Surgery" loading="lazy" /><div class="zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+          <div class="cert-body">
+            <h4>Fellowship of General Surgery</h4>
+            <p>Advanced specialist qualification in general surgery</p>
+          </div>
         </div>
-        <div class="cert-card reveal">
-          <div class="seal"><i class="fa-solid fa-globe"></i></div>
-          <h4>IFSO Member</h4>
-          <p>International Federation for the Surgery of Obesity</p>
+        <div class="cert-card reveal" data-cert-item data-title="IFSO Member">
+          <div class="cert-thumb"><img src="assets/img/normal/about_3_1.jpg" alt="IFSO Member" loading="lazy" /><div class="zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+          <div class="cert-body">
+            <h4>IFSO Member</h4>
+            <p>International Federation for the Surgery of Obesity</p>
+          </div>
         </div>
-        <div class="cert-card reveal">
-          <div class="seal"><i class="fa-solid fa-hospital"></i></div>
-          <h4>Ministry of Health Accreditation</h4>
-          <p>Accredited surgical facility and operating standards</p>
+        <div class="cert-card reveal" data-cert-item data-title="Ministry of Health Accreditation">
+          <div class="cert-thumb"><img src="assets/img/normal/about_3_2.jpg" alt="Ministry of Health Accreditation" loading="lazy" /><div class="zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+          <div class="cert-body">
+            <h4>Ministry of Health Accreditation</h4>
+            <p>Accredited surgical facility and operating standards</p>
+          </div>
         </div>
-        <div class="cert-card reveal">
-          <div class="seal"><i class="fa-solid fa-user-doctor"></i></div>
-          <h4>Board-Certified Surgeon</h4>
-          <p>Verified surgical training and ongoing competency</p>
+        <div class="cert-card reveal" data-cert-item data-title="Board-Certified Surgeon">
+          <div class="cert-thumb"><img src="assets/img/normal/about_4_1.jpg" alt="Board-Certified Surgeon" loading="lazy" /><div class="zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+          <div class="cert-body">
+            <h4>Board-Certified Surgeon</h4>
+            <p>Verified surgical training and ongoing competency</p>
+          </div>
         </div>
-        <div class="cert-card reveal">
-          <div class="seal"><i class="fa-solid fa-camera-retro"></i></div>
-          <h4>Advanced Laparoscopic Certification</h4>
-          <p>Specialized training in minimally invasive technique</p>
+        <div class="cert-card reveal" data-cert-item data-title="Advanced Laparoscopic Certification">
+          <div class="cert-thumb"><img src="assets/img/normal/about2.jpg" alt="Advanced Laparoscopic Certification" loading="lazy" /><div class="zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+          <div class="cert-body">
+            <h4>Advanced Laparoscopic Certification</h4>
+            <p>Specialized training in minimally invasive technique</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- ============ Certificate Lightbox ============ -->
+  <div class="cert-lightbox-backdrop">
+    <div class="cert-lightbox-box">
+      <button class="cert-lightbox-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <button class="cert-lightbox-nav cert-lightbox-prev" aria-label="Previous"><i class="fa-solid fa-arrow-left"></i></button>
+      <img src="" alt="" />
+      <div class="cert-lightbox-caption"></div>
+      <button class="cert-lightbox-nav cert-lightbox-next" aria-label="Next"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+  </div>
 
   <!-- ============ Testimonials ============ -->
   <section class="space" style="padding-top:0;">
@@ -283,7 +306,7 @@
 
   <!-- ============ Floating Action Stack ============ -->
   <div class="fab-stack">
-    <div class="fab-social">
+    <div class="fab-social open">
       <div class="fab-social-menu">
         <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>

@@ -280,7 +280,49 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = {};
       new FormData(form).forEach((val, key) => { data[key] = val; });
       try { sessionStorage.setItem("salamBooking", JSON.stringify(data)); } catch (err) {}
-      window.location.href = "payment.html";
+      window.location.href = document.documentElement.dir === "rtl" ? "payment-ar.html" : "payment.html";
     });
   });
+
+  /* Certificate lightbox gallery */
+  const certGallery = document.querySelector("[data-cert-gallery]");
+  if (certGallery) {
+    const items = Array.from(certGallery.querySelectorAll("[data-cert-item]"));
+    const backdrop = document.querySelector(".cert-lightbox-backdrop");
+    const box = document.querySelector(".cert-lightbox-box");
+    const imgEl = box.querySelector("img");
+    const captionEl = box.querySelector(".cert-lightbox-caption");
+    let current = 0;
+
+    const show = (i) => {
+      current = (i + items.length) % items.length;
+      const item = items[current];
+      const src = item.querySelector("img").getAttribute("src");
+      const title = item.dataset.title || "";
+      imgEl.src = src;
+      imgEl.alt = title;
+      captionEl.textContent = title;
+    };
+    const open = (i) => {
+      show(i);
+      backdrop.classList.add("open");
+      document.body.classList.add("modal-open");
+    };
+    const close = () => {
+      backdrop.classList.remove("open");
+      document.body.classList.remove("modal-open");
+    };
+
+    items.forEach((item, i) => item.addEventListener("click", () => open(i)));
+    box.querySelector(".cert-lightbox-close").addEventListener("click", close);
+    box.querySelector(".cert-lightbox-prev").addEventListener("click", () => show(current - 1));
+    box.querySelector(".cert-lightbox-next").addEventListener("click", () => show(current + 1));
+    backdrop.addEventListener("click", (e) => { if (e.target === backdrop) close(); });
+    document.addEventListener("keydown", (e) => {
+      if (!backdrop.classList.contains("open")) return;
+      if (e.key === "Escape") close();
+      if (e.key === "ArrowLeft") show(current - 1);
+      if (e.key === "ArrowRight") show(current + 1);
+    });
+  }
 });
