@@ -341,3 +341,85 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// Appointment Tabs
+const apptTabs = document.querySelectorAll('.appt-tab');
+if (apptTabs.length > 0) {
+  apptTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Remove active from all tabs
+      apptTabs.forEach(t => t.classList.remove('active'));
+      // Add active to clicked
+      tab.classList.add('active');
+      
+      // Hide all forms
+      document.querySelectorAll('.appt-form-wrapper').forEach(f => f.classList.remove('active'));
+      // Show target form
+      const target = document.querySelector(tab.dataset.target);
+      if (target) target.classList.add('active');
+    });
+  });
+}
+
+// New Home Services Explorer
+const svcCatBtns = document.querySelectorAll('.svc-cat-btn');
+const svcMenuItems = document.querySelectorAll('.svc-menu-item');
+const svcContentPanel = document.querySelector('.svc-content-panel');
+
+if (svcCatBtns.length > 0 && svcMenuItems.length > 0 && svcContentPanel) {
+  const imgEl = svcContentPanel.querySelector('img');
+  const titleEl = svcContentPanel.querySelector('h3');
+  const descEl = svcContentPanel.querySelector('p');
+  const linkEl = svcContentPanel.querySelector('.btn');
+  
+  function updateContent(item) {
+    if(!item) return;
+    // Animate out
+    svcContentPanel.classList.add('animating');
+    
+    setTimeout(() => {
+      // Update data
+      imgEl.src = item.dataset.img;
+      titleEl.textContent = item.dataset.title;
+      descEl.textContent = item.dataset.desc;
+      linkEl.href = item.dataset.link;
+      
+      // Animate in
+      svcContentPanel.classList.remove('animating');
+    }, 300);
+    
+    // Update active class on menu items
+    svcMenuItems.forEach(m => m.classList.remove('active'));
+    item.classList.add('active');
+  }
+
+  // Menu item click
+  svcMenuItems.forEach(item => {
+    item.addEventListener('click', () => updateContent(item));
+  });
+
+  // Category tab click
+  svcCatBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Update tab active state
+      svcCatBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      const targetCat = btn.dataset.cat;
+      let firstVisible = null;
+      
+      // Filter menu items
+      svcMenuItems.forEach(item => {
+        if (item.dataset.cat === targetCat) {
+          item.style.display = 'block';
+          if (!firstVisible) firstVisible = item;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+      
+      // Show first item of selected category
+      if (firstVisible) updateContent(firstVisible);
+    });
+  });
+}

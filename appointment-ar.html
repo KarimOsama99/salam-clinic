@@ -99,12 +99,57 @@
     </div>
   </section>
 
+  <!-- ============ Available Booking Slots ============ -->
+  <section class="space-sm booking-schedule">
+    <div class="container">
+      <div class="schedule-card reveal">
+        <div class="schedule-head">
+          <span class="eyebrow on-dark" style="justify-content:center;">احجز موعدك الإلكتروني</span>
+          <h2>مواعيد استشارات زوم المتاحة</h2>
+        </div>
+        <div class="schedule-grid">
+          <div class="schedule-day">
+            <div class="day-icon"><i class="fa-solid fa-calendar-day"></i></div>
+            <div class="day-info">
+              <span class="day-name">السبت - الأربعاء</span>
+              <span class="day-time" style="font-family: var(--f-sans);">10:00 AM - 08:00 PM</span>
+            </div>
+            <span class="badge badge-open" style="font-family: 'Cairo', sans-serif;">متاح</span>
+          </div>
+          <div class="schedule-day">
+            <div class="day-icon"><i class="fa-solid fa-clock"></i></div>
+            <div class="day-info">
+              <span class="day-name">الخميس</span>
+              <span class="day-time" style="font-family: var(--f-sans);">10:00 AM - 04:00 PM</span>
+            </div>
+            <span class="badge badge-open" style="font-family: 'Cairo', sans-serif;">متاح</span>
+          </div>
+          <div class="schedule-day closed">
+            <div class="day-icon"><i class="fa-solid fa-calendar-xmark"></i></div>
+            <div class="day-info">
+              <span class="day-name">الجمعة</span>
+              <span class="day-time">لا يوجد حجز</span>
+            </div>
+            <span class="badge badge-closed" style="font-family: 'Cairo', sans-serif;">مغلق</span>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+
   <section class="space">
     <div class="container page-grid2">
       <div class="form-card2 reveal">
         <span class="eyebrow">احجز موعد</span>
         <h2 style="margin-bottom:28px;font-size:30px;">حدد ميعاد استشارتك</h2>
-        <form data-appt-form>
+<div class="appt-tabs">
+          <button type="button" class="appt-tab active" data-target="#form-offline" style="font-family:'Cairo', sans-serif;"><i class="fa-solid fa-hospital" style="margin-left:6px;"></i> حجز بالعيادة</button>
+          <button type="button" class="appt-tab" data-target="#form-online" style="font-family:'Cairo', sans-serif;"><i class="fa-solid fa-laptop-medical" style="margin-left:6px;"></i> استشارة أونلاين (زوم)</button>
+        </div>
+        <div id="form-offline" class="appt-form-wrapper active">
+          <form data-appt-form>
           <div class="form-row2" style="margin-bottom:16px;">
             <input class="field2" type="text" name="name" placeholder="اسم المريض" required />
             <input class="field2" type="email" name="email" placeholder="البريد الإلكتروني" />
@@ -152,6 +197,38 @@
           </label>
           <button class="btn btn-pink" type="submit" style="width:100%;justify-content:center;">احجز الموعد <i class="fa-solid fa-arrow-left-long"></i></button>
         </form>
+        </div>
+
+        <div id="form-online" class="appt-form-wrapper">
+<form action="appointment.php" method="POST" data-appt-form>
+          <input type="hidden" name="type" value="online" />
+          <div class="form-row2" style="margin-bottom:16px;">
+            <input class="field2" type="text" name="name" placeholder="اسم المريض" required />
+            <input class="field2" type="email" name="email" placeholder="البريد الإلكتروني (مطلوب لإرسال رابط زوم)" required />
+          </div>
+          <div class="form-row2" style="margin-bottom:16px;">
+            <select class="field2" name="service" data-cs required>
+              <option value="" disabled selected>موضوع الاستشارة</option>
+              <option>استفسار عن جراحات السمنة</option>
+              <option>استفسار عن الجراحة العامة</option>
+              <option>زيارة متابعة</option>
+              <option>استشارة طبية أخرى</option>
+            </select>
+            <input class="field2" type="tel" name="phone" placeholder="رقم الهاتف" required />
+          </div>
+          <input class="field2" type="date" name="date" data-cd data-placeholder="تاريخ الحجز المفضل" required />
+          <div class="time-slots-wrap" style="display:none; margin-bottom:16px;">
+            <label class="slot-label">الأوقات المتاحة</label>
+            <div class="time-slots"></div>
+            <input type="hidden" name="time" />
+          </div>
+          <textarea class="field2" name="message" placeholder="اكتب وصف مختصر لحالتك أو أسئلتك..."></textarea>
+          <label style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--ink-soft);margin-bottom:20px;">
+            <input type="checkbox" required /> أوافق على <a href="terms-ar.html" style="color:var(--navy);text-decoration:underline;">شروط الاستخدام وسياسة الخصوصية</a>
+          </label>
+          <button class="btn btn-pink" type="submit" style="width:100%;justify-content:center;font-family:'Cairo', sans-serif;">تأكيد حجز زوم <i class="fa-solid fa-video" style="margin-right:8px;"></i></button>
+        </form>
+        </div>
       </div>
 
       <aside>
@@ -177,27 +254,6 @@
   </section>
 
   <!-- ============ Footer ============ -->
-  
-  
-  <!-- ============ Feedback Strip ============ -->
-  <section class="feedback-strip space-sm">
-    <div class="container">
-      <div class="feedback-box">
-        <div class="feedback-text">
-          <h4 style="color:#fff; margin-bottom:8px;">شارك ملاحظاتك</h4>
-          <p style="color:rgba(255,255,255,.7); font-size:14.5px;">رأيك يهمنا، شاركنا تجربتك لنرتقي بخدماتنا.</p>
-        </div>
-        <form class="feedback-form">
-          <div class="feedback-row">
-            <input type="text" class="field" placeholder="الاسم" required />
-            <input type="tel" class="field" placeholder="رقم الهاتف" required />
-          </div>
-          <textarea class="field" rows="3" placeholder="ملاحظاتك" required></textarea>
-          <button type="submit" class="btn btn-pink">مشاركة</button>
-        </form>
-      </div>
-    </div>
-  </section>
 <footer class="site-footer2">
     <div class="container footer-grid2">
       <div class="footer-brand2">

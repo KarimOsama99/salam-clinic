@@ -224,151 +224,87 @@
         <h2>رعاية جراحية مبنية<br>على حالتك</h2>
       </div>
 
-      <div class="segmented-wrap reveal">
-        <div class="segmented">
-          <div class="segmented-thumb"></div>
-          <button class="active" data-target="panel-all">الكل</button>
-          <button data-target="panel-bariatric">جراحات السمنة</button>
-          <button data-target="panel-general">الجراحة العامة</button>
-        </div>
+      <div class="svc-cat-tabs reveal">
+        <button class="svc-cat-btn active" data-cat="bariatric" style="font-family:'Cairo', sans-serif;">جراحة السمنة</button>
+        <button class="svc-cat-btn" data-cat="general" style="font-family:'Cairo', sans-serif;">الجراحة العامة</button>
       </div>
 
-      <div class="svc-panel active" id="panel-all">
-        <div class="svc-card reveal">
-          <div class="svc-thumb"><img src="assets/img/service/service_1_1.jpg" alt="تحويل مسار المعدة" loading="lazy" /></div>
-          <div class="svc-body">
-            <span class="svc-tag">جراحات السمنة</span>
-            <h3><a href="service-details-ar.html">تحويل مسار المعدة</a></h3>
-            <a href="service-details-ar.html" class="svc-link">اعرف أكتر <i class="fa-solid fa-arrow-left"></i></a>
-          </div>
+      <div class="svc-split-layout reveal">
+        <div class="svc-v-menu">
+          <!-- Bariatric -->
+          <button class="svc-menu-item active" data-cat="bariatric" data-img="assets/img/service/service_1_1.jpg" data-title="استشارة جراحات السمنة" data-desc="استشارة شاملة لمناقشة أهدافك في إنقاص الوزن، وتقييم صحتك، وتحديد الإجراء الأنسب لك." data-link="service-details-ar.html">استشارة جراحات السمنة</button>
+          <button class="svc-menu-item" data-cat="bariatric" data-img="assets/img/service/service_1_1.jpg" data-title="تكميم المعدة" data-desc="إزالة حوالي 75-80% من حجم المعدة، مما يقلل من كمية الطعام ويقلل هرمونات الجوع بشكل فعال للوصول لوزن مثالي." data-link="service-details-ar.html">تكميم المعدة</button>
+          <button class="svc-menu-item" data-cat="bariatric" data-img="assets/img/service/service_1_2.jpg" data-title="تحويل المسار الكلاسيكي والمصغر" data-desc="عمل جيب صغير في المعدة متصل مباشرة بالأمعاء الدقيقة، مما يقلل من كمية الأكل ويغير طريقة امتصاص السعرات." data-link="service-details-ar.html">تحويل المسار الكلاسيكي والمصغر</button>
+          <button class="svc-menu-item" data-cat="bariatric" data-img="assets/img/service/service_1_3.jpg" data-title="جراحات تصحيح جراحات السمنة" data-desc="إجراءات تصحيحية لعمليات سمنة سابقة لم تحقق النتائج المرجوة أو سببت مضاعفات تحتاج إلى تعديل." data-link="service-details-ar.html">جراحات تصحيح جراحات السمنة</button>
+          <button class="svc-menu-item" data-cat="bariatric" data-img="assets/img/service/service_1_4.jpg" data-title="تكميم المعدة البكيني" data-desc="تكميم المعدة البكيني هو نفس فعالية التكميم التقليدي، لكن بلمسة تجميلية. الجراحة بتتعمل من خلال فتحات صغيرة جدًا أسفل البطن عند خط البكيني، علشان تديك نتيجة قوية من غير أي جروح ظاهرة." data-link="service-details-ar.html">تكميم المعدة البكيني</button>
+          
+          <!-- General -->
+          <button class="svc-menu-item" data-cat="general" style="display:none;" data-img="assets/img/service/service_2_1.jpg" data-title="استشارة الجراحة العامة" data-desc="تقييم شامل وخطط علاج شخصية لمجموعة واسعة من حالات الجراحة العامة لضمان صحتك المثلى." data-link="service-details-ar.html">استشارة الجراحة العامة</button>
+          <button class="svc-menu-item" data-cat="general" style="display:none;" data-img="assets/img/service/service_2_1.jpg" data-title="علاج الفتق" data-desc="علاج ضعف جدار البطن بالمنظار باستخدام شقوق جراحية صغيرة لضمان تعافي أسرع." data-link="service-details-ar.html">علاج الفتق</button>
+          <button class="svc-menu-item" data-cat="general" style="display:none;" data-img="assets/img/service/service_2_2.jpg" data-title="استئصال المرارة بالمنظار" data-desc="استئصال آمن للمرارة الملتهبة باستخدام المنظار الجراحي مع الحد الأدنى من الجروح وفترة نقاهة قصيرة." data-link="service-details-ar.html">استئصال المرارة بالمنظار</button>
+          <button class="svc-menu-item" data-cat="general" style="display:none;" data-img="assets/img/service/service_2_3.jpg" data-title="استئصال الزائدة الدودية" data-desc="الإزالة الجراحية الطارئة أو المخطط لها للزائدة الدودية، وتتم بالمنظار لتقليل الألم وسرعة التعافي." data-link="service-details-ar.html">استئصال الزائدة الدودية</button>
+          <button class="svc-menu-item" data-cat="general" style="display:none;" data-img="assets/img/service/service_2_4.jpg" data-title="جراحات الغدة الدرقية" data-desc="إدارة جراحية دقيقة لحالات الغدة الدرقية، مع التركيز على سلامة الأحبال الصوتية وتحقيق أفضل نتيجة تجميلية للرقبة." data-link="service-details-ar.html">جراحات الغدة الدرقية</button>
         </div>
-        <div class="svc-card reveal">
-          <div class="svc-thumb"><img src="assets/img/service/service_1_2.jpg" alt="تكميم المعدة" loading="lazy" /></div>
-          <div class="svc-body">
-            <span class="svc-tag">جراحات السمنة</span>
-            <h3><a href="service-details-ar.html">تكميم المعدة</a></h3>
-            <a href="service-details-ar.html" class="svc-link">اعرف أكتر <i class="fa-solid fa-arrow-left"></i></a>
+        
+        <div class="svc-content-panel">
+          <div class="svc-content-img">
+            <img src="assets/img/service/service_1_1.jpg" alt="تكميم المعدة" />
           </div>
-        </div>
-        <div class="svc-card reveal">
-          <div class="svc-thumb"><img src="assets/img/service/service_1_3.jpg" alt="جراحات تصحيحية" loading="lazy" /></div>
-          <div class="svc-body">
-            <span class="svc-tag">جراحات السمنة</span>
-            <h3><a href="service-details-ar.html">جراحات تصحيحية</a></h3>
-            <a href="service-details-ar.html" class="svc-link">اعرف أكتر <i class="fa-solid fa-arrow-left"></i></a>
-          </div>
-        </div>
-        <div class="svc-card reveal">
-          <div class="svc-thumb"><img src="assets/img/service/service_1_4.jpg" alt="البالون المعدي" loading="lazy" /></div>
-          <div class="svc-body">
-            <span class="svc-tag">جراحات السمنة</span>
-            <h3><a href="service-details-ar.html">البالون المعدي</a></h3>
-            <a href="service-details-ar.html" class="svc-link">اعرف أكتر <i class="fa-solid fa-arrow-left"></i></a>
-          </div>
-        </div>
-        <div class="svc-card reveal">
-          <div class="svc-thumb"><img src="assets/img/service/service_2_1.jpg" alt="علاج الفتق" loading="lazy" /></div>
-          <div class="svc-body">
-            <span class="svc-tag">الجراحة العامة</span>
-            <h3><a href="service-details-ar.html">علاج الفتق</a></h3>
-            <a href="service-details-ar.html" class="svc-link">اعرف أكتر <i class="fa-solid fa-arrow-left"></i></a>
-          </div>
-        </div>
-        <div class="svc-card reveal">
-          <div class="svc-thumb"><img src="assets/img/service/service_2_2.jpg" alt="جراحة المرارة" loading="lazy" /></div>
-          <div class="svc-body">
-            <span class="svc-tag">الجراحة العامة</span>
-            <h3><a href="service-details-ar.html">جراحة المرارة</a></h3>
-            <a href="service-details-ar.html" class="svc-link">اعرف أكتر <i class="fa-solid fa-arrow-left"></i></a>
-          </div>
-        </div>
-        <div class="svc-card reveal">
-          <div class="svc-thumb"><img src="assets/img/service/service_2_3.jpg" alt="استئصال الزائدة" loading="lazy" /></div>
-          <div class="svc-body">
-            <span class="svc-tag">الجراحة العامة</span>
-            <h3><a href="service-details-ar.html">استئصال الزائدة</a></h3>
-            <a href="service-details-ar.html" class="svc-link">اعرف أكتر <i class="fa-solid fa-arrow-left"></i></a>
-          </div>
-        </div>
-        <div class="svc-card reveal">
-          <div class="svc-thumb"><img src="assets/img/service/service_2_4.jpg" alt="الغدة الدرقية والجار درقية" loading="lazy" /></div>
-          <div class="svc-body">
-            <span class="svc-tag">الجراحة العامة</span>
-            <h3><a href="service-details-ar.html">الغدة الدرقية والجار درقية</a></h3>
-            <a href="service-details-ar.html" class="svc-link">اعرف أكتر <i class="fa-solid fa-arrow-left"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="svc-panel" id="panel-bariatric">
-        <div class="svc-card reveal">
-          <div class="svc-thumb"><img src="assets/img/service/service_1_1.jpg" alt="تحويل مسار المعدة" loading="lazy" /></div>
-          <div class="svc-body">
-            <span class="svc-tag">جراحات السمنة</span>
-            <h3><a href="service-details-ar.html">تحويل مسار المعدة</a></h3>
-            <a href="service-details-ar.html" class="svc-link">اعرف أكتر <i class="fa-solid fa-arrow-left"></i></a>
-          </div>
-        </div>
-        <div class="svc-card reveal">
-          <div class="svc-thumb"><img src="assets/img/service/service_1_2.jpg" alt="تكميم المعدة" loading="lazy" /></div>
-          <div class="svc-body">
-            <span class="svc-tag">جراحات السمنة</span>
-            <h3><a href="service-details-ar.html">تكميم المعدة</a></h3>
-            <a href="service-details-ar.html" class="svc-link">اعرف أكتر <i class="fa-solid fa-arrow-left"></i></a>
-          </div>
-        </div>
-        <div class="svc-card reveal">
-          <div class="svc-thumb"><img src="assets/img/service/service_1_3.jpg" alt="جراحات تصحيحية" loading="lazy" /></div>
-          <div class="svc-body">
-            <span class="svc-tag">جراحات السمنة</span>
-            <h3><a href="service-details-ar.html">جراحات تصحيحية</a></h3>
-            <a href="service-details-ar.html" class="svc-link">اعرف أكتر <i class="fa-solid fa-arrow-left"></i></a>
-          </div>
-        </div>
-        <div class="svc-card reveal">
-          <div class="svc-thumb"><img src="assets/img/service/service_1_4.jpg" alt="البالون المعدي" loading="lazy" /></div>
-          <div class="svc-body">
-            <span class="svc-tag">جراحات السمنة</span>
-            <h3><a href="service-details-ar.html">البالون المعدي</a></h3>
-            <a href="service-details-ar.html" class="svc-link">اعرف أكتر <i class="fa-solid fa-arrow-left"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="svc-panel" id="panel-general">
-        <div class="svc-card reveal">
-          <div class="svc-thumb"><img src="assets/img/service/service_2_1.jpg" alt="علاج الفتق" loading="lazy" /></div>
-          <div class="svc-body">
-            <span class="svc-tag">الجراحة العامة</span>
-            <h3><a href="service-details-ar.html">علاج الفتق</a></h3>
-            <a href="service-details-ar.html" class="svc-link">اعرف أكتر <i class="fa-solid fa-arrow-left"></i></a>
-          </div>
-        </div>
-        <div class="svc-card reveal">
-          <div class="svc-thumb"><img src="assets/img/service/service_2_2.jpg" alt="جراحة المرارة" loading="lazy" /></div>
-          <div class="svc-body">
-            <span class="svc-tag">الجراحة العامة</span>
-            <h3><a href="service-details-ar.html">جراحة المرارة</a></h3>
-            <a href="service-details-ar.html" class="svc-link">اعرف أكتر <i class="fa-solid fa-arrow-left"></i></a>
-          </div>
-        </div>
-        <div class="svc-card reveal">
-          <div class="svc-thumb"><img src="assets/img/service/service_2_3.jpg" alt="استئصال الزائدة" loading="lazy" /></div>
-          <div class="svc-body">
-            <span class="svc-tag">الجراحة العامة</span>
-            <h3><a href="service-details-ar.html">استئصال الزائدة</a></h3>
-            <a href="service-details-ar.html" class="svc-link">اعرف أكتر <i class="fa-solid fa-arrow-left"></i></a>
-          </div>
-        </div>
-        <div class="svc-card reveal">
-          <div class="svc-thumb"><img src="assets/img/service/service_2_4.jpg" alt="الغدة الدرقية والجار درقية" loading="lazy" /></div>
-          <div class="svc-body">
-            <span class="svc-tag">الجراحة العامة</span>
-            <h3><a href="service-details-ar.html">الغدة الدرقية والجار درقية</a></h3>
-            <a href="service-details-ar.html" class="svc-link">اعرف أكتر <i class="fa-solid fa-arrow-left"></i></a>
+          <div class="svc-content-text">
+            <h3>تكميم المعدة</h3>
+            <p>إزالة حوالي 75-80% من حجم المعدة، مما يقلل من كمية الطعام ويقلل هرمونات الجوع بشكل فعال للوصول لوزن مثالي.</p>
+            <div class="svc-stats">
+              <div class="svc-stat"><i class="fa-solid fa-clock"></i> 60-90 دقيقة</div>
+              <div class="svc-stat"><i class="fa-solid fa-bed"></i> 1-2 أيام إقامة</div>
+            </div>
+            <a href="service-details-ar.html" class="btn btn-pink" style="font-family:'Cairo', sans-serif;">اقرأ المزيد <i class="fa-solid fa-arrow-left-long" style="margin-left:0; margin-right:8px;"></i></a>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- ============ Available Booking Slots ============ -->
+  <section class="space-sm booking-schedule">
+    <div class="container">
+      <div class="schedule-card reveal">
+        <div class="schedule-head">
+          <span class="eyebrow on-dark" style="justify-content:center;">احجز موعدك الإلكتروني</span>
+          <h2>مواعيد استشارات زوم المتاحة</h2>
+        </div>
+        <div class="schedule-grid">
+          <div class="schedule-day">
+            <div class="day-icon"><i class="fa-solid fa-calendar-day"></i></div>
+            <div class="day-info">
+              <span class="day-name">السبت - الأربعاء</span>
+              <span class="day-time" style="font-family: var(--f-sans);">10:00 AM - 08:00 PM</span>
+            </div>
+            <span class="badge badge-open" style="font-family: 'Cairo', sans-serif;">متاح</span>
+          </div>
+          <div class="schedule-day">
+            <div class="day-icon"><i class="fa-solid fa-clock"></i></div>
+            <div class="day-info">
+              <span class="day-name">الخميس</span>
+              <span class="day-time" style="font-family: var(--f-sans);">10:00 AM - 04:00 PM</span>
+            </div>
+            <span class="badge badge-open" style="font-family: 'Cairo', sans-serif;">متاح</span>
+          </div>
+          <div class="schedule-day closed">
+            <div class="day-icon"><i class="fa-solid fa-calendar-xmark"></i></div>
+            <div class="day-info">
+              <span class="day-name">الجمعة</span>
+              <span class="day-time">لا يوجد حجز</span>
+            </div>
+            <span class="badge badge-closed" style="font-family: 'Cairo', sans-serif;">مغلق</span>
+          </div>
+        </div>
+        <div class="schedule-action">
+          <a href="appointment-ar.html" class="btn btn-pink">احجز استشارة أونلاين <i class="fa-solid fa-arrow-left-long" style="margin-left:0; margin-right:8px;"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- ============ Vision / Mission / Goals ============ -->
   <section class="space" style="padding-top:0;">
@@ -567,27 +503,6 @@
   </section>
 
   <!-- ============ Footer ============ -->
-  
-  
-  <!-- ============ Feedback Strip ============ -->
-  <section class="feedback-strip space-sm">
-    <div class="container">
-      <div class="feedback-box">
-        <div class="feedback-text">
-          <h4 style="color:#fff; margin-bottom:8px;">شارك ملاحظاتك</h4>
-          <p style="color:rgba(255,255,255,.7); font-size:14.5px;">رأيك يهمنا، شاركنا تجربتك لنرتقي بخدماتنا.</p>
-        </div>
-        <form class="feedback-form">
-          <div class="feedback-row">
-            <input type="text" class="field" placeholder="الاسم" required />
-            <input type="tel" class="field" placeholder="رقم الهاتف" required />
-          </div>
-          <textarea class="field" rows="3" placeholder="ملاحظاتك" required></textarea>
-          <button type="submit" class="btn btn-pink">مشاركة</button>
-        </form>
-      </div>
-    </div>
-  </section>
 <footer class="site-footer2">
     <div class="container footer-grid2">
       <div class="footer-brand2">

@@ -221,151 +221,87 @@
         <h2>Surgical care built<br>around your case</h2>
       </div>
 
-      <div class="segmented-wrap reveal">
-        <div class="segmented">
-          <div class="segmented-thumb"></div>
-          <button class="active" data-target="panel-all">All</button>
-          <button data-target="panel-bariatric">Bariatric Surgery</button>
-          <button data-target="panel-general">General Surgery</button>
-        </div>
+      <div class="svc-cat-tabs reveal">
+        <button class="svc-cat-btn active" data-cat="bariatric">Bariatric Surgery</button>
+        <button class="svc-cat-btn" data-cat="general">General Surgery</button>
       </div>
 
-      <div class="svc-panel active" id="panel-all">
-        <div class="svc-card reveal">
-          <div class="svc-thumb"><img src="assets/img/service/service_1_1.jpg" alt="Gastric Sleeve Surgery" loading="lazy" /></div>
-          <div class="svc-body">
-            <span class="svc-tag">Bariatric Surgery</span>
-            <h3><a href="service-details.html">Gastric Sleeve Surgery</a></h3>
-            <a href="service-details.html" class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
+      <div class="svc-split-layout reveal">
+        <div class="svc-v-menu">
+          <!-- Bariatric -->
+          <button class="svc-menu-item active" data-cat="bariatric" data-img="assets/img/service/service_1_1.jpg" data-title="Bariatric Consultation" data-desc="Comprehensive consultation to discuss your weight loss goals, evaluate your health, and determine the most suitable bariatric procedure for you." data-link="service-details.html">Bariatric Consultation</button>
+          <button class="svc-menu-item" data-cat="bariatric" data-img="assets/img/service/service_1_1.jpg" data-title="Gastric Sleeve Surgery" data-desc="Removes roughly 75–80% of the stomach, limiting intake and reducing appetite-driving hormones for lasting weight loss." data-link="service-details.html">Gastric Sleeve Surgery</button>
+          <button class="svc-menu-item" data-cat="bariatric" data-img="assets/img/service/service_1_2.jpg" data-title="Gastric Bypass Surgery" data-desc="Creates a small stomach pouch connected directly to the small intestine, limiting intake and changing how calories are absorbed." data-link="service-details.html">Gastric Bypass Surgery</button>
+          <button class="svc-menu-item" data-cat="bariatric" data-img="assets/img/service/service_1_3.jpg" data-title="Revision Surgeries" data-desc="Corrective procedures for previous bariatric surgeries that didn't achieve the desired results or caused complications." data-link="service-details.html">Revision Surgeries</button>
+          <button class="svc-menu-item" data-cat="bariatric" data-img="assets/img/service/service_1_4.jpg" data-title="Intragastric Balloon" data-desc="A non-surgical, temporary weight-loss device placed in the stomach to help you feel full sooner." data-link="service-details.html">Intragastric Balloon</button>
+          
+          <!-- General -->
+          <button class="svc-menu-item" data-cat="general" style="display:none;" data-img="assets/img/service/service_2_1.jpg" data-title="General Consultation" data-desc="Expert evaluation and personalized treatment plans for a wide range of general surgical conditions to ensure your optimal health." data-link="service-details.html">General Consultation</button>
+          <button class="svc-menu-item" data-cat="general" style="display:none;" data-img="assets/img/service/service_2_1.jpg" data-title="Hernia Repair" data-desc="Laparoscopic repair of abdominal wall weaknesses, using minimal incisions and mesh reinforcement for a faster recovery." data-link="service-details.html">Hernia Repair</button>
+          <button class="svc-menu-item" data-cat="general" style="display:none;" data-img="assets/img/service/service_2_2.jpg" data-title="Gallbladder Surgery" data-desc="Safe, minimally invasive removal of a diseased or inflamed gallbladder (cholecystectomy) with minimal downtime." data-link="service-details.html">Gallbladder Surgery</button>
+          <button class="svc-menu-item" data-cat="general" style="display:none;" data-img="assets/img/service/service_2_3.jpg" data-title="Appendectomy" data-desc="Emergency or planned surgical removal of the appendix, performed laparoscopically whenever possible." data-link="service-details.html">Appendectomy</button>
+          <button class="svc-menu-item" data-cat="general" style="display:none;" data-img="assets/img/service/service_2_4.jpg" data-title="Thyroid & Parathyroid Surgery" data-desc="Precise surgical management of thyroid and parathyroid conditions, prioritizing vocal cord safety and aesthetic outcomes." data-link="service-details.html">Thyroid & Parathyroid</button>
         </div>
-        <div class="svc-card reveal">
-          <div class="svc-thumb"><img src="assets/img/service/service_1_2.jpg" alt="Gastric Bypass Surgery" loading="lazy" /></div>
-          <div class="svc-body">
-            <span class="svc-tag">Bariatric Surgery</span>
-            <h3><a href="service-details.html">Gastric Bypass Surgery</a></h3>
-            <a href="service-details.html" class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+        
+        <div class="svc-content-panel">
+          <div class="svc-content-img">
+            <img src="assets/img/service/service_1_1.jpg" alt="Gastric Sleeve Surgery" />
           </div>
-        </div>
-        <div class="svc-card reveal">
-          <div class="svc-thumb"><img src="assets/img/service/service_1_3.jpg" alt="Revision Surgeries" loading="lazy" /></div>
-          <div class="svc-body">
-            <span class="svc-tag">Bariatric Surgery</span>
-            <h3><a href="service-details.html">Revision Surgeries</a></h3>
-            <a href="service-details.html" class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="svc-card reveal">
-          <div class="svc-thumb"><img src="assets/img/service/service_1_4.jpg" alt="Intragastric Balloon" loading="lazy" /></div>
-          <div class="svc-body">
-            <span class="svc-tag">Bariatric Surgery</span>
-            <h3><a href="service-details.html">Intragastric Balloon</a></h3>
-            <a href="service-details.html" class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="svc-card reveal">
-          <div class="svc-thumb"><img src="assets/img/service/service_2_1.jpg" alt="Hernia Repair" loading="lazy" /></div>
-          <div class="svc-body">
-            <span class="svc-tag">General Surgery</span>
-            <h3><a href="service-details.html">Hernia Repair</a></h3>
-            <a href="service-details.html" class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="svc-card reveal">
-          <div class="svc-thumb"><img src="assets/img/service/service_2_2.jpg" alt="Gallbladder Surgery" loading="lazy" /></div>
-          <div class="svc-body">
-            <span class="svc-tag">General Surgery</span>
-            <h3><a href="service-details.html">Gallbladder Surgery</a></h3>
-            <a href="service-details.html" class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="svc-card reveal">
-          <div class="svc-thumb"><img src="assets/img/service/service_2_3.jpg" alt="Appendectomy" loading="lazy" /></div>
-          <div class="svc-body">
-            <span class="svc-tag">General Surgery</span>
-            <h3><a href="service-details.html">Appendectomy</a></h3>
-            <a href="service-details.html" class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="svc-card reveal">
-          <div class="svc-thumb"><img src="assets/img/service/service_2_4.jpg" alt="Thyroid & Parathyroid Surgery" loading="lazy" /></div>
-          <div class="svc-body">
-            <span class="svc-tag">General Surgery</span>
-            <h3><a href="service-details.html">Thyroid & Parathyroid Surgery</a></h3>
-            <a href="service-details.html" class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="svc-panel" id="panel-bariatric">
-        <div class="svc-card reveal">
-          <div class="svc-thumb"><img src="assets/img/service/service_1_1.jpg" alt="Gastric Sleeve Surgery" loading="lazy" /></div>
-          <div class="svc-body">
-            <span class="svc-tag">Bariatric Surgery</span>
-            <h3><a href="service-details.html">Gastric Sleeve Surgery</a></h3>
-            <a href="service-details.html" class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="svc-card reveal">
-          <div class="svc-thumb"><img src="assets/img/service/service_1_2.jpg" alt="Gastric Bypass Surgery" loading="lazy" /></div>
-          <div class="svc-body">
-            <span class="svc-tag">Bariatric Surgery</span>
-            <h3><a href="service-details.html">Gastric Bypass Surgery</a></h3>
-            <a href="service-details.html" class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="svc-card reveal">
-          <div class="svc-thumb"><img src="assets/img/service/service_1_3.jpg" alt="Revision Surgeries" loading="lazy" /></div>
-          <div class="svc-body">
-            <span class="svc-tag">Bariatric Surgery</span>
-            <h3><a href="service-details.html">Revision Surgeries</a></h3>
-            <a href="service-details.html" class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="svc-card reveal">
-          <div class="svc-thumb"><img src="assets/img/service/service_1_4.jpg" alt="Intragastric Balloon" loading="lazy" /></div>
-          <div class="svc-body">
-            <span class="svc-tag">Bariatric Surgery</span>
-            <h3><a href="service-details.html">Intragastric Balloon</a></h3>
-            <a href="service-details.html" class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="svc-panel" id="panel-general">
-        <div class="svc-card reveal">
-          <div class="svc-thumb"><img src="assets/img/service/service_2_1.jpg" alt="Hernia Repair" loading="lazy" /></div>
-          <div class="svc-body">
-            <span class="svc-tag">General Surgery</span>
-            <h3><a href="service-details.html">Hernia Repair</a></h3>
-            <a href="service-details.html" class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="svc-card reveal">
-          <div class="svc-thumb"><img src="assets/img/service/service_2_2.jpg" alt="Gallbladder Surgery" loading="lazy" /></div>
-          <div class="svc-body">
-            <span class="svc-tag">General Surgery</span>
-            <h3><a href="service-details.html">Gallbladder Surgery</a></h3>
-            <a href="service-details.html" class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="svc-card reveal">
-          <div class="svc-thumb"><img src="assets/img/service/service_2_3.jpg" alt="Appendectomy" loading="lazy" /></div>
-          <div class="svc-body">
-            <span class="svc-tag">General Surgery</span>
-            <h3><a href="service-details.html">Appendectomy</a></h3>
-            <a href="service-details.html" class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="svc-card reveal">
-          <div class="svc-thumb"><img src="assets/img/service/service_2_4.jpg" alt="Thyroid & Parathyroid Surgery" loading="lazy" /></div>
-          <div class="svc-body">
-            <span class="svc-tag">General Surgery</span>
-            <h3><a href="service-details.html">Thyroid & Parathyroid Surgery</a></h3>
-            <a href="service-details.html" class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="svc-content-text">
+            <h3>Gastric Sleeve Surgery</h3>
+            <p>Removes roughly 75–80% of the stomach, limiting intake and reducing appetite-driving hormones for lasting weight loss.</p>
+            <div class="svc-stats">
+              <div class="svc-stat"><i class="fa-solid fa-clock"></i> 60-90 min</div>
+              <div class="svc-stat"><i class="fa-solid fa-bed"></i> 1-2 nights stay</div>
+            </div>
+            <a href="service-details.html" class="btn btn-pink">Read More <i class="fa-solid fa-arrow-right-long"></i></a>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- ============ Available Booking Slots ============ -->
+  <section class="space-sm booking-schedule">
+    <div class="container">
+      <div class="schedule-card reveal">
+        <div class="schedule-head">
+          <span class="eyebrow on-dark" style="justify-content:center;">Book Your Online Slot</span>
+          <h2>Available Zoom Appointments</h2>
+        </div>
+        <div class="schedule-grid">
+          <div class="schedule-day">
+            <div class="day-icon"><i class="fa-solid fa-calendar-day"></i></div>
+            <div class="day-info">
+              <span class="day-name">Sat - Wed</span>
+              <span class="day-time">10:00 AM - 08:00 PM</span>
+            </div>
+            <span class="badge badge-open">Available</span>
+          </div>
+          <div class="schedule-day">
+            <div class="day-icon"><i class="fa-solid fa-clock"></i></div>
+            <div class="day-info">
+              <span class="day-name">Thursday</span>
+              <span class="day-time">10:00 AM - 04:00 PM</span>
+            </div>
+            <span class="badge badge-open">Available</span>
+          </div>
+          <div class="schedule-day closed">
+            <div class="day-icon"><i class="fa-solid fa-calendar-xmark"></i></div>
+            <div class="day-info">
+              <span class="day-name">Friday</span>
+              <span class="day-time">Closed</span>
+            </div>
+            <span class="badge badge-closed">No Booking</span>
+          </div>
+        </div>
+        <div class="schedule-action">
+          <a href="appointment.html" class="btn btn-pink">Book Online Consultation <i class="fa-solid fa-arrow-right-long"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- ============ Vision / Mission / Goals ============ -->
   <section class="space" style="padding-top:0;">
@@ -656,27 +592,6 @@
   </div>
 
   <!-- ============ Footer ============ -->
-  
-  
-  <!-- ============ Feedback Strip ============ -->
-  <section class="feedback-strip space-sm">
-    <div class="container">
-      <div class="feedback-box">
-        <div class="feedback-text">
-          <h4 style="color:#fff; margin-bottom:8px;">Share your feedback</h4>
-          <p style="color:rgba(255,255,255,.7); font-size:14.5px;">Your opinion matters to us. Help us improve our services.</p>
-        </div>
-        <form class="feedback-form">
-          <div class="feedback-row">
-            <input type="text" class="field" placeholder="Name" required />
-            <input type="tel" class="field" placeholder="Phone number" required />
-          </div>
-          <textarea class="field" rows="3" placeholder="Your feedback" required></textarea>
-          <button type="submit" class="btn btn-pink">Submit</button>
-        </form>
-      </div>
-    </div>
-  </section>
 <footer class="site-footer2">
     <div class="container footer-grid2">
       <div class="footer-brand2">

@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#0F1526" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <title>Secure Checkout — Dr. Mohamed Abdelsalam Clinic</title>
-  <meta name="description" content="Confirm and pay your appointment reservation fee securely." />
+  <title>What to Expect Before Gastric Sleeve Surgery — Dr. Mohamed Abdelsalam Clinic</title>
+  <meta name="description" content="Details about gastric sleeve surgery: procedure, recovery, and what to expect." />
   <link rel="icon" href="assets/img/fav.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -35,12 +35,12 @@
           <a href="gallery.html">Gallery</a>
           <a href="success.html">Our Success</a>
           <a href="faq.html">FAQ's</a>
-          <a href="blog.html">Blog</a>
+          <a href="blog.html" class="active">Blog</a>
           <a href="contact.html">Contact</a>
         </nav>
         <div class="dock-actions">
           <a href="tel:01555914029" class="dock-icon-btn" aria-label="Call the clinic"><i class="fa-solid fa-phone"></i></a>
-          <a href="payment-ar.html" class="dock-lang"><i class="fa-solid fa-globe"></i> AR</a>
+          <a href="blog-details-ar.html" class="dock-lang"><i class="fa-solid fa-globe"></i> AR</a>
           <a href="appointment.html" class="dock-cta">Book Now</a>
           <button class="dock-menu-btn" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
         </div>
@@ -58,7 +58,7 @@
     </div>
     <nav class="sheet-nav">
       <a href="index.html"><span>Home</span><i class="fa-solid fa-arrow-up-right"></i></a>
-      <a href="service.html"><span>Services</span><i class="fa-solid fa-arrow-up-right"></i></a>
+      <a href="service.html" class="active"><span>Services</span><i class="fa-solid fa-arrow-up-right"></i></a>
       <a href="about.html"><span>About Us</span><i class="fa-solid fa-arrow-up-right"></i></a>
       <a href="gallery.html"><span>Gallery</span><i class="fa-solid fa-arrow-up-right"></i></a>
       <a href="success.html"><span>Our Success</span><i class="fa-solid fa-arrow-up-right"></i></a>
@@ -82,7 +82,7 @@
         <a href="#" aria-label="Snapchat"><i class="fa-brands fa-snapchat"></i></a>
         <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
       </div>
-      <a href="payment-ar.html" class="sheet-lang">العربية</a>
+      <a href="blog-details-ar.html" class="sheet-lang">العربية</a>
     </div>
   </div>
 
@@ -91,93 +91,64 @@
     <div class="hero-orb o2"></div>
     <div class="container page-hero-inner">
       <span class="eyebrow on-dark">Dr. Mohamed Abdelsalam Clinic</span>
-      <h1>Secure Checkout</h1>
-      <div class="crumbs"><a href="index.html">Home</a> <span class="sep">/</span> <span>Payment</span></div>
+      <h1>What to Expect Before Gastric Sleeve Surgery</h1>
+      <div class="crumbs"><a href="index.html">Home</a> <span class="sep">/</span> <a href="blog.html" class="active">Blog</a> <span class="sep">/</span> <span>Article</span></div>
     </div>
   </section>
 
   <section class="space">
-    <div class="container">
-      <div class="pay-grid">
-        <div class="pay-form-wrap reveal">
-          <span class="eyebrow">Secure Checkout</span>
-          <h2 style="margin-bottom:26px;font-size:28px;">Confirm & Pay Reservation Fee</h2>
-
-          <div class="pay-tabs">
-            <button class="pay-tab active" data-method="card"><i class="fa-regular fa-credit-card"></i> Card</button>
-            <button class="pay-tab" data-method="vodafone"><i class="fa-solid fa-mobile-screen"></i> Vodafone Cash</button>
-            <button class="pay-tab" data-method="instapay"><i class="fa-solid fa-arrow-right-arrow-left"></i> InstaPay</button>
-          </div>
-
-          <form id="paymentForm">
-            <div class="pay-card-form active">
-              <div class="card-visual">
-                <div class="top-row">
-                  <div class="chip"></div>
-                  <span class="brand-mark">Salam Pay</span>
-                </div>
-                <div class="num" id="cvNumber">•••• •••• •••• ••••</div>
-                <div class="bottom-row">
-                  <div><span class="cv-label">CARD HOLDER</span><span class="cv-value" id="cvHolder">YOUR NAME</span></div>
-                  <div><span class="cv-label">EXPIRES</span><span class="cv-value" id="cvExpiry">MM/YY</span></div>
-                </div>
-              </div>
-              <input class="field2" type="text" id="cardNumber" placeholder="Card Number" inputmode="numeric" required />
-              <div class="form-row2" style="margin-bottom:16px;">
-                <input class="field2" type="text" id="cardExpiry" placeholder="MM/YY" maxlength="5" required />
-                <input class="field2" type="text" placeholder="CVC" maxlength="4" inputmode="numeric" required />
-              </div>
-              <input class="field2" type="text" id="cardHolder" placeholder="Cardholder Name" required />
-            </div>
-
-            <div class="transfer-box" data-method-box="vodafone" style="display:none;">
-              <div class="transfer-row">
-                <div>
-                  <span class="transfer-label">Transfer to (Vodafone Cash)</span>
-                  <span class="transfer-value">015 55 914 029</span>
-                </div>
-                <button type="button" class="copy-btn" data-copy="01555914029"><i class="fa-regular fa-copy"></i> Copy</button>
-              </div>
-              <p class="transfer-hint">Send the total amount to this number via Vodafone Cash, then enter your transaction reference below to confirm.</p>
-              <input class="field2" type="text" placeholder="Transaction reference / last 4 digits" style="margin-bottom:0;" />
-            </div>
-
-            <div class="transfer-box" data-method-box="instapay" style="display:none;">
-              <div class="transfer-row">
-                <div>
-                  <span class="transfer-label">Send via InstaPay to</span>
-                  <span class="transfer-value">@SalamClinic</span>
-                </div>
-                <button type="button" class="copy-btn" data-copy="@SalamClinic"><i class="fa-regular fa-copy"></i> Copy</button>
-              </div>
-              <p class="transfer-hint">Use your bank's InstaPay app to send the total amount to this account, then enter the sender name below to confirm.</p>
-              <input class="field2" type="text" placeholder="Sender account name" style="margin-bottom:0;" />
-            </div>
-
-            <button class="btn btn-pink" type="submit" id="payBtn" style="width:100%;justify-content:center;margin-top:22px;">Pay Now <i class="fa-solid fa-lock"></i></button>
-            <p style="font-size:12.5px;color:var(--ink-soft);font-family:var(--f-sans);text-align:center;margin-top:14px;">This is a secure, encrypted payment. By continuing you agree to our <a href="terms.html" style="color:var(--navy);">Terms & Privacy Policy</a>.</p>
-          </form>
-
-          <div class="pay-success">
-            <div class="check-circle"><i class="fa-solid fa-check"></i></div>
-            <h2>Payment Successful</h2>
-            <p>Your appointment has been confirmed. A confirmation SMS and email are on their way.</p>
-            <div class="ref">Booking Reference: <span id="bookingRef">—</span></div>
-            <a href="index.html" class="btn btn-pink">Back to Home <i class="fa-solid fa-arrow-right-long"></i></a>
-          </div>
+    <div class="container page-grid2">
+      <div>
+        <div class="svc-detail-hero reveal">
+          <img src="assets/img/dr/blog1.jpg" alt="Gastric Sleeve Surgery" />
         </div>
+        
 
-        <div class="order-summary reveal">
-          <h4>Order Summary</h4>
-          <div class="order-row"><span>Patient</span><span id="sumName">—</span></div>
-          <div class="order-row"><span>Service</span><span id="sumService">—</span></div>
-          <div class="order-row"><span>Date</span><span id="sumDate">—</span></div>
-          <div class="order-row"><span>Time</span><span id="sumTime">—</span></div>
-          <div class="order-row"><span>Reservation Fee</span><span id="sumFee">—</span></div>
-          <div class="order-total"><span>Total</span><span id="sumTotal">—</span></div>
-          <p style="font-size:12.5px;color:rgba(255,255,255,.5);font-family:var(--f-sans);margin-top:18px;">The reservation fee secures your slot. Any remaining procedure costs are discussed and settled in person with the clinic.</p>
+        <div class="post-meta2">
+            <span><i class="fa-solid fa-user"></i> Dr. Mohamed Abdelsalam</span>
+            <span><i class="fa-solid fa-calendar"></i> July 2026</span>
+            <span><i class="fa-solid fa-clock"></i> 5 min read</span>
+          </div>
+          <h1 style="font-size:32px;margin-bottom:24px;">What to Expect Before Gastric Sleeve Surgery</h1>
+          <div class="post-body2">
+            <p>Deciding to move forward with gastric sleeve surgery is a big step, and knowing what happens before your procedure can make the whole process feel far less overwhelming.</p>
+            <h2>Your first consultation</h2>
+            <p>We start with a full review of your medical history, current health, and weight-loss goals. This is also your chance to ask questions about the procedure, recovery, and what results to expect.</p>
+            <h2>Pre-operative assessment</h2>
+            <p>Before surgery, you'll complete a set of tests to confirm you're a safe candidate for the procedure.</p>
+            <ul>
+              <li>Complete blood panel and metabolic screening</li>
+              <li>Nutrition consultation to prepare your body for surgery</li>
+              <li>Review of any current medications</li>
+              <li>A clear walk-through of the day-of-surgery plan</li>
+            </ul>
+            <h2>On the day</h2>
+            <p>The procedure is performed laparoscopically under general anesthesia, typically taking 60–90 minutes, followed by 1–2 nights of hospital monitoring before you go home with a clear recovery plan.</p>
+          </div>
+
+        <div class="post-share2">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
         </div>
       </div>
+
+      <aside>
+        <div class="side-card2">
+          <h4>Recent Posts</h4>
+          <ul>
+            <li><a href="blog-details.html">Life After Bariatric Surgery: Diet & Recovery Tips</a></li>
+            <li><a href="blog-details.html">When Should You Consider Hernia Repair?</a></li>
+            <li><a href="blog-details.html">Gastric Sleeve vs. Gastric Bypass</a></li>
+            <li><a href="blog-details.html">Gallbladder Surgery: Recovery Timeline</a></li>
+          </ul>
+        </div>
+        <div class="side-card2 dark">
+          <h4>Book a Consultation</h4>
+          <p>Ready to take the next step? Schedule a visit with Dr. Mohamed Abdelsalam today.</p>
+          <a href="appointment.html" class="btn btn-pink" style="width:100%;justify-content:center;">Book Now</a>
+        </div>
+      </aside>
     </div>
   </section>
 
@@ -203,7 +174,7 @@
           <a href="gallery.html">Gallery</a></li>
           <li><a href="service.html">Services</a></li>
           <li><a href="success.html">Our Success</a></li>
-          <li><a href="blog.html">Blog</a></li>
+          <li><a href="blog.html" class="active">Blog</a></li>
           <li><a href="faq.html">FAQ's</a></li>
         </ul>
       </div>
@@ -249,6 +220,5 @@
   </div>
 
   <script src="assets/js/site-v2.js"></script>
-  <script src="assets/js/payment.js"></script>
 </body>
 </html>

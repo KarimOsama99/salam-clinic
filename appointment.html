@@ -96,12 +96,57 @@
     </div>
   </section>
 
+  <!-- ============ Available Booking Slots ============ -->
+  <section class="space-sm booking-schedule">
+    <div class="container">
+      <div class="schedule-card reveal">
+        <div class="schedule-head">
+          <span class="eyebrow on-dark" style="justify-content:center;">Book Your Online Slot</span>
+          <h2>Available Zoom Appointments</h2>
+        </div>
+        <div class="schedule-grid">
+          <div class="schedule-day">
+            <div class="day-icon"><i class="fa-solid fa-calendar-day"></i></div>
+            <div class="day-info">
+              <span class="day-name">Sat - Wed</span>
+              <span class="day-time">10:00 AM - 08:00 PM</span>
+            </div>
+            <span class="badge badge-open">Available</span>
+          </div>
+          <div class="schedule-day">
+            <div class="day-icon"><i class="fa-solid fa-clock"></i></div>
+            <div class="day-info">
+              <span class="day-name">Thursday</span>
+              <span class="day-time">10:00 AM - 04:00 PM</span>
+            </div>
+            <span class="badge badge-open">Available</span>
+          </div>
+          <div class="schedule-day closed">
+            <div class="day-icon"><i class="fa-solid fa-calendar-xmark"></i></div>
+            <div class="day-info">
+              <span class="day-name">Friday</span>
+              <span class="day-time">Closed</span>
+            </div>
+            <span class="badge badge-closed">No Booking</span>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+
   <section class="space">
     <div class="container page-grid2">
       <div class="form-card2 reveal">
         <span class="eyebrow">Book an Appointment</span>
         <h2 style="margin-bottom:28px;font-size:30px;">Schedule your consultation</h2>
-        <form data-appt-form>
+<div class="appt-tabs">
+          <button type="button" class="appt-tab active" data-target="#form-offline"><i class="fa-solid fa-hospital" style="margin-right:6px;"></i> Clinic Appointment</button>
+          <button type="button" class="appt-tab" data-target="#form-online"><i class="fa-solid fa-laptop-medical" style="margin-right:6px;"></i> Online Consultation (Zoom)</button>
+        </div>
+        <div id="form-offline" class="appt-form-wrapper active">
+          <form data-appt-form>
           <div class="form-row2" style="margin-bottom:16px;">
             <input class="field2" type="text" name="name" placeholder="Patient name" required />
             <input class="field2" type="email" name="email" placeholder="Email address" />
@@ -149,6 +194,38 @@
           </label>
           <button class="btn btn-pink" type="submit" style="width:100%;justify-content:center;">Make Appointment <i class="fa-solid fa-arrow-right-long"></i></button>
         </form>
+        </div>
+
+        <div id="form-online" class="appt-form-wrapper">
+<form action="appointment.php" method="POST" data-appt-form>
+          <input type="hidden" name="type" value="online" />
+          <div class="form-row2" style="margin-bottom:16px;">
+            <input class="field2" type="text" name="name" placeholder="Patient name" required />
+            <input class="field2" type="email" name="email" placeholder="Email address (Required for Zoom link)" required />
+          </div>
+          <div class="form-row2" style="margin-bottom:16px;">
+            <select class="field2" name="service" data-cs required>
+              <option value="" disabled selected>Topic of Consultation</option>
+              <option>Bariatric Surgery Inquiry</option>
+              <option>General Surgery Inquiry</option>
+              <option>Follow-up Visit</option>
+              <option>Other Medical Advice</option>
+            </select>
+            <input class="field2" type="tel" name="phone" placeholder="Phone number" required />
+          </div>
+          <input class="field2" type="date" name="date" data-cd data-placeholder="Preferred Date" required />
+          <div class="time-slots-wrap" style="display:none; margin-bottom:16px;">
+            <label class="slot-label">Available Times</label>
+            <div class="time-slots"></div>
+            <input type="hidden" name="time" />
+          </div>
+          <textarea class="field2" name="message" placeholder="Briefly describe your condition or questions..."></textarea>
+          <label style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--ink-soft);margin-bottom:20px;font-family:var(--f-sans);">
+            <input type="checkbox" required /> I agree to the <a href="terms.html" style="color:var(--navy);text-decoration:underline;">Terms of Use and Privacy Policy</a>
+          </label>
+          <button class="btn btn-pink" type="submit" style="width:100%;justify-content:center;">Book Zoom Session <i class="fa-solid fa-video"></i></button>
+        </form>
+        </div>
       </div>
 
       <aside>
@@ -174,27 +251,6 @@
   </section>
 
   <!-- ============ Footer ============ -->
-  
-  
-  <!-- ============ Feedback Strip ============ -->
-  <section class="feedback-strip space-sm">
-    <div class="container">
-      <div class="feedback-box">
-        <div class="feedback-text">
-          <h4 style="color:#fff; margin-bottom:8px;">Share your feedback</h4>
-          <p style="color:rgba(255,255,255,.7); font-size:14.5px;">Your opinion matters to us. Help us improve our services.</p>
-        </div>
-        <form class="feedback-form">
-          <div class="feedback-row">
-            <input type="text" class="field" placeholder="Name" required />
-            <input type="tel" class="field" placeholder="Phone number" required />
-          </div>
-          <textarea class="field" rows="3" placeholder="Your feedback" required></textarea>
-          <button type="submit" class="btn btn-pink">Submit</button>
-        </form>
-      </div>
-    </div>
-  </section>
 <footer class="site-footer2">
     <div class="container footer-grid2">
       <div class="footer-brand2">
