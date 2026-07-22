@@ -16,6 +16,12 @@
   
 </head>
 <body>
+  <!-- ============ Preloader ============ -->
+  <div class="preloader">
+    <div class="preloader-logo"><img src="assets/img/logo2.png" alt="Loading" /></div>
+    <div class="preloader-spinner"></div>
+  </div>
+
 
   <!-- ============ Floating Dock Nav ============ -->
   <div class="dock-wrap">
@@ -26,6 +32,7 @@
           <a href="index.html">Home</a>
           <a href="service.html">Services</a>
           <a href="about.html">About Us</a>
+          <a href="gallery.html">Gallery</a>
           <a href="success.html" class="active">Our Success</a>
           <a href="faq.html">FAQ's</a>
           <a href="blog.html">Blog</a>
@@ -53,6 +60,7 @@
       <a href="index.html"><span>Home</span><i class="fa-solid fa-arrow-up-right"></i></a>
       <a href="service.html"><span>Services</span><i class="fa-solid fa-arrow-up-right"></i></a>
       <a href="about.html"><span>About Us</span><i class="fa-solid fa-arrow-up-right"></i></a>
+      <a href="gallery.html"><span>Gallery</span><i class="fa-solid fa-arrow-up-right"></i></a>
       <a href="success.html" class="active"><span>Our Success</span><i class="fa-solid fa-arrow-up-right"></i></a>
       <a href="faq.html"><span>FAQ's</span><i class="fa-solid fa-arrow-up-right"></i></a>
       <a href="blog.html"><span>Blog</span><i class="fa-solid fa-arrow-up-right"></i></a>
@@ -175,7 +183,28 @@
   </section>
 
   <!-- ============ Footer ============ -->
-  <footer class="site-footer2">
+  
+  
+  <!-- ============ Feedback Strip ============ -->
+  <section class="feedback-strip space-sm">
+    <div class="container">
+      <div class="feedback-box">
+        <div class="feedback-text">
+          <h4 style="color:#fff; margin-bottom:8px;">Share your feedback</h4>
+          <p style="color:rgba(255,255,255,.7); font-size:14.5px;">Your opinion matters to us. Help us improve our services.</p>
+        </div>
+        <form class="feedback-form">
+          <div class="feedback-row">
+            <input type="text" class="field" placeholder="Name" required />
+            <input type="tel" class="field" placeholder="Phone number" required />
+          </div>
+          <textarea class="field" rows="3" placeholder="Your feedback" required></textarea>
+          <button type="submit" class="btn btn-pink">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+<footer class="site-footer2">
     <div class="container footer-grid2">
       <div class="footer-brand2">
         <img src="assets/img/logo2.png" alt="logo" style="height:40px; filter:brightness(0) invert(1);" />
@@ -192,7 +221,8 @@
       <div>
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html">About Us</a>
+          <a href="gallery.html">Gallery</a></li>
           <li><a href="service.html">Services</a></li>
           <li><a href="success.html">Our Success</a></li>
           <li><a href="blog.html">Blog</a></li>
@@ -226,7 +256,7 @@
 
   <!-- ============ Floating Action Stack ============ -->
   <div class="fab-stack">
-    <div class="fab-social open">
+    <div class="fab-social">
       <div class="fab-social-menu">
         <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>

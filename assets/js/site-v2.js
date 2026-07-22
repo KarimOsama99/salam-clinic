@@ -1,4 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
+  /* Preloader */
+  const preloader = document.querySelector('.preloader');
+  if (preloader) {
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        preloader.classList.add('fade-out');
+        setTimeout(() => preloader.remove(), 600);
+      }, 300);
+    });
+  }
+
   /* Bottom sheet menu */
   const menuBtn = document.querySelector(".dock-menu-btn");
   const sheet = document.querySelector(".bottom-sheet");
@@ -40,9 +51,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const prev = document.querySelector(".testi-prev2");
   const next = document.querySelector(".testi-next2");
   if (track) {
+    const isRTL = document.documentElement.dir === "rtl";
     const amt = () => track.querySelector(".testi-card2").offsetWidth + 22;
-    next && next.addEventListener("click", () => track.scrollBy({ left: amt(), behavior: "smooth" }));
-    prev && prev.addEventListener("click", () => track.scrollBy({ left: -amt(), behavior: "smooth" }));
+    next && next.addEventListener("click", () => track.scrollBy({ left: isRTL ? -amt() : amt(), behavior: "smooth" }));
+    prev && prev.addEventListener("click", () => track.scrollBy({ left: isRTL ? amt() : -amt(), behavior: "smooth" }));
   }
 
   /* Drag-to-scroll for horizontal carousels (mouse). Touch already scrolls natively. */
@@ -123,6 +135,9 @@ document.addEventListener("DOMContentLoaded", () => {
   /* Social speed-dial FAB */
   const fabSocial = document.querySelector(".fab-social");
   if (fabSocial) {
+    // Open by default
+    fabSocial.classList.add("open");
+
     const mainBtn = fabSocial.querySelector(".main-social");
     mainBtn.addEventListener("click", (e) => {
       e.stopPropagation();
