@@ -615,7 +615,7 @@ body.modal-open { overflow: hidden; }
 
 /* ============ Horizontal scroll-snap Journey ============ */
 .journey-scroller {
-  display: flex; gap: 22px; overflow-x: auto; scroll-snap-type: x mandatory;
+  display: flex; gap: 22px; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory;
   padding: 6px 0 20px;
 }
 .journey-card {
