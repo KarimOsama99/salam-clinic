@@ -170,6 +170,7 @@ section { position: relative; }
 }
 
 @media (max-width: 1199px) {
+  .hero-card.doctor { left: -24px; bottom: 20px; width: max-content; max-width: 240px; }
   .dock-links { display: none; }
   .dock-icon-btn, .dock-cta, .dock-lang { display: none; }
   .dock-menu-btn { display: flex; }
@@ -263,7 +264,7 @@ body { padding-top: 96px; }
 .hero h1 { font-size: clamp(40px, 5.6vw, 68px); color: #fff; }
 .hero h1 em { font-style: italic; color: var(--pink-glow); }
 .hero p.lead { margin: 24px 0 34px; font-size: 18px; max-width: 480px; color: rgba(255,255,255,.72); }
-.hero .btn-group { display: flex; gap: 14px; flex-wrap: wrap; }
+.hero .btn-group { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 60px; }
 
 .hero-visual { position: relative; }
 .hero-visual .frame {
@@ -303,9 +304,24 @@ body { padding-top: 96px; }
   .hero-visual { order: -1; max-width: 340px; margin: 0 auto 30px; }
   .hero p.lead { margin-inline: auto; }
   .hero .btn-group { justify-content: center; }
-  .hero-card.doctor { left: 0; }
-  .hero-card.rating { right: 0; }
+  .hero-card { padding: 10px 14px; border-radius: 14px; gap: 8px; }
+  .hero-card.doctor { left: -10px; bottom: 0; max-width: 200px; }
+  .hero-card.rating { right: -15px; top: -10px; }
+  .hero-card.doctor .ic { width: 32px; height: 32px; font-size: 14px; }
+  .hero-card.doctor b { font-size: 12px; margin-bottom: 2px; }
+  .hero-card.doctor span { font-size: 10px; }
+  .hero-card.rating b { font-size: 16px; margin-bottom: 2px; }
+  .hero-card.rating span { font-size: 10px; }
+  .hero-card.rating .stars { font-size: 10px; margin-bottom: 2px; }
+  html[dir="rtl"] .hero-card.doctor { left: auto; right: -10px; }
+  html[dir="rtl"] .hero-card.rating { right: auto; left: -15px; }
   .stat-dock-inner { grid-template-columns: repeat(2, 1fr); gap: 22px 0; }
+  .stat-dock-inner .stat:nth-child(even)::after { display: none; }
+  .stat-dock-inner .stat:nth-child(odd)::after { display: block; }
+  .stat-dock { margin-top: 54px; padding-bottom: 0; }
+}
+@media (max-width: 560px) {
+  .hero-visual { max-width: 250px; margin: 0 auto 30px; }
   .stat-dock-inner .stat:nth-child(2)::after { display: none; }
   .stat-dock-inner .stat:nth-child(odd)::after { display: block; }
   .stat-dock { margin-top: 28px; padding-bottom: 0; }
@@ -514,7 +530,7 @@ html[dir="rtl"] .bio-images .badge-exp { right: auto; left: -22px; }
 .feature-card2 p, .feature-card2 li { font-size: 14.5px; color: var(--ink-soft); margin-bottom: 8px; font-family: var(--f-sans); position: relative; z-index: 1; }
 .feature-card2 ul { margin-bottom: 20px; }
 .feature-card2 ul li { display: flex; gap: 8px; }
-.feature-card2 ul li::before { content: "—"; color: var(--pink); flex-shrink: 0; }
+.feature-card2 ul li::before { content: "\f00c"; font-family: "Font Awesome 6 Pro"; font-weight: 900; color: var(--pink); flex-shrink: 0; }
 @media (max-width: 900px) { .feature-grid2 { grid-template-columns: 1fr; } }
 
 /* ============ Brand / certification strip ============ */
@@ -690,9 +706,9 @@ body.modal-open { overflow: hidden; }
 .feedback-form .field:focus, .feedback-form .phone-wrap:focus-within { outline: none; border-color: var(--pink); background: rgba(255,255,255,.08); }
 .feedback-form .btn { align-self: center; padding: 15px 40px; border-radius: var(--r-full); font-size: 16px; font-weight: 600; margin-top: 10px; }
 @media (max-width: 767px) {
-  .feedback-box { padding: 40px 20px; border-radius: 32px; gap: 24px; }
+  .feedback-box { padding: 40px 20px 60px; border-radius: 32px; gap: 24px; }
   .feedback-row { flex-direction: column; }
-  .feedback-form .btn { width: 100%; }
+  .feedback-form .btn { width: 100%; justify-content: center; text-align: center; }
 }
 
 /* ============ Footer ============ */
@@ -713,14 +729,17 @@ body.modal-open { overflow: hidden; }
 html[dir="rtl"] .footer-bottom2 a::after { left: auto; right: 0; }
 .footer-bottom2 a:hover { color: #fff; text-decoration: none; }
 .footer-bottom2 a:hover::after { width: 100%; }
+@media (max-width: 1199px) {
+  .footer-bottom2 { justify-content: center; gap: 40px; }
+}
 @media (max-width: 900px) { 
   .footer-grid2 { grid-template-columns: 1fr 1fr; } 
-  .footer-bottom2 { justify-content: center; gap: 40px; }
+  .footer-bottom2 { justify-content: center; flex-direction: column; gap: 12px; }
 }
 @media (max-width: 560px) { 
   .footer-grid2 { grid-template-columns: 1fr; } 
-  .footer-bottom2 { flex-direction: column; align-items: center; text-align: center; padding: 26px 0 calc(26px + var(--safe-b)); gap: 12px; justify-content: center; }
-  html[dir="rtl"] .footer-bottom2 { text-align: center; padding: 26px 0 calc(26px + var(--safe-b)); }
+  .footer-bottom2 { flex-direction: column; align-items: center; text-align: center; padding: 26px 70px calc(26px + var(--safe-b)) 70px; gap: 12px; justify-content: center; }
+  html[dir="rtl"] .footer-bottom2 { text-align: center; padding: 26px 70px calc(26px + var(--safe-b)) 70px; }
 }
 
 /* ============ Reveal ============ */
@@ -1020,7 +1039,7 @@ html[dir="rtl"] .blog-card2:hover .readmore2 i { transform: translateX(-5px); }
 .post-body2 p { font-size: 16px; color: var(--ink-soft); margin-bottom: 18px; font-family: var(--f-sans); }
 .post-body2 ul { margin: 0 0 20px; display: grid; gap: 10px; }
 .post-body2 ul li { font-size: 15px; color: var(--ink-soft); display: flex; gap: 10px; font-family: var(--f-sans); }
-.post-body2 ul li::before { content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900; color: var(--pink); }
+.post-body2 ul li::before { content: "\f00c"; font-family: "Font Awesome 6 Pro"; font-weight: 900; color: var(--pink); }
 .post-share2 { display: flex; gap: 10px; margin-top: 32px; }
 .post-share2 a { width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; }
 .post-share2 a:hover { background: var(--pink); border-color: var(--pink); color: #fff; }
@@ -1108,7 +1127,7 @@ html[dir="rtl"] .cs-trigger { text-align: right; }
 }
 .cs-option:hover, .cs-option.active { background: var(--paper-2); color: var(--pink); }
 .cs-option.selected { color: var(--navy); font-weight: 700; }
-.cs-option.selected::after { content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900; float: right; color: var(--pink); font-size: 12px; }
+.cs-option.selected::after { content: "\f00c"; font-family: "Font Awesome 6 Pro"; font-weight: 900; float: right; color: var(--pink); font-size: 12px; }
 html[dir="rtl"] .cs-option.selected::after { float: left; }
 
 /* Dark variant for cs on photo-overlay forms (.appt2-form) — marker class set by JS since panel is portaled out */
@@ -1351,6 +1370,7 @@ html[dir="rtl"] .phone-country-btn .phone-chevron { margin-left: 0; margin-right
 .schedule-action { text-align: center; position: relative; z-index: 2; }
 
 @media (max-width: 767px) {
+  .schedule-grid { grid-template-columns: 1fr; }
   .schedule-card { padding: 30px 20px; }
   .schedule-head h2 { font-size: 26px; }
   .schedule-day { flex-direction: column; text-align: center; gap: 12px; }
@@ -1451,3 +1471,40 @@ html[dir="rtl"] .acc2-head, html[dir="rtl"] .acc2-body { font-family: 'Cairo', s
 
 html[dir="rtl"] .blog-modal .modal-close { right: auto; left: 18px; }
 
+
+html[dir="rtl"] .bio-list li { font-family: "Cairo", sans-serif; }
+
+html[dir="rtl"] .bio-emergency a { font-family: "Inter", sans-serif !important; font-size: 19px; font-weight: 700; letter-spacing: 0.5px; }
+
+
+
+/* Custom background for stat-dock-inner on any page except home page */
+.stat-dock-inner.glass-dark {
+  background: radial-gradient(120% 90% at 15% 0%, var(--navy-soft) 0%, var(--navy-deep) 45%, var(--black) 100%) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 1px solid rgba(255,255,255,0.05) !important;
+}
+
+/* Home page hero override */
+.hero .stat-dock-inner.glass-dark {
+  background: var(--glass-dark) !important;
+  backdrop-filter: blur(22px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(160%) !important;
+  border: 1px solid var(--glass-dark-border) !important;
+}
+
+/* Emergency contact group layout */
+.bio-emergency-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 30px;
+}
+@media (max-width: 767px) {
+  .bio-emergency-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
