@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     wrap.appendChild(trigger);
 
     const panel = document.createElement("div");
-    panel.className = "cs-panel" + (wrap.closest(".appt2-form") ? " cs-panel-dark" : "");
+    panel.className = "cs-panel";
 
     const makeOption = (opt) => {
       const div = document.createElement("div");
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
     wrap.appendChild(trigger);
 
     const panel = document.createElement("div");
-    panel.className = "cd-panel" + (wrap.closest(".appt2-form") ? " cd-panel-dark" : "");
+    panel.className = "cd-panel";
 
     const today = new Date();
     today.setHours(0, 0, 0, 0);
@@ -230,7 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (input.dataset.phoneEnhanced) return;
     input.dataset.phoneEnhanced = "1";
 
-    const isDark = !!input.closest(".appt2-form");
+    const isDark = false;
     const placeholder = input.getAttribute("placeholder") || "Phone number";
     input.setAttribute("placeholder", placeholder);
 

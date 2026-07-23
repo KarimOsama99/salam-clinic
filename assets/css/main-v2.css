@@ -1508,3 +1508,270 @@ html[dir="rtl"] .bio-emergency a { font-family: "Inter", sans-serif !important; 
     gap: 12px;
   }
 }
+
+/* Before & After Gallery in Story Cards */
+.before-after-gallery {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  width: 100%;
+}
+.ba-image {
+  flex: 1;
+  position: relative;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  background: var(--paper-2);
+  aspect-ratio: 4 / 3;
+}
+.ba-image.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ba-image.placeholder i {
+  font-size: 28px;
+  color: var(--ink-soft);
+  opacity: 0.3;
+}
+.ba-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.ba-label {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--ink);
+  font-size: 11px;
+  font-family: var(--f-sans);
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+[dir="rtl"] .ba-label {
+  left: auto;
+  right: 8px;
+}
+
+
+
+
+/* Updated Brand Strip Styles - Natural Colors */
+div.brand-strip { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap: 60px; 
+    opacity: 1; 
+    filter: none; 
+}
+div.brand-strip img { 
+    height: 80px !important;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    filter: none !important;
+    opacity: 1 !important;
+}
+div.brand-strip img:hover { 
+    transform: scale(1.15) translateY(-5px); 
+}
+/* Mobile responsive */
+@media (max-width: 768px) {
+    div.brand-strip { gap: 30px; }
+    div.brand-strip img { height: 50px !important; }
+}
+
+
+/* Get Directions button hover on dark background */
+.btn-map-hover {
+    transition: all 0.3s ease;
+}
+.btn-map-hover:hover {
+  background-color: white !important;
+  color: var(--navy) !important;
+  border-color: white !important;
+  transform: translateY(-2px);
+}
+
+/* Chic Light Theme Appt2 UI */
+.appt2-bg { display: none !important; }
+
+.appt2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%) !important;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 40px 80px -20px rgba(9, 13, 24, 0.08) !important;
+}
+
+/* Very subtle and elegant decorative shapes */
+.appt2::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -20%;
+    width: 60%; height: 150%;
+    background: radial-gradient(circle, rgba(242,78,155,0.05) 0%, transparent 70%);
+    pointer-events: none; z-index: 0;
+}
+.appt2::after {
+    content: '';
+    position: absolute;
+    bottom: -50%; right: -20%;
+    width: 60%; height: 150%;
+    background: radial-gradient(circle, rgba(9,13,24,0.03) 0%, transparent 70%);
+    pointer-events: none; z-index: 0;
+}
+
+[dir="rtl"] .appt2::before { left: auto; right: -20%; }
+[dir="rtl"] .appt2::after { right: auto; left: -20%; }
+
+.appt2-content {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 700px !important;
+    margin: 0 auto !important;
+    padding: 80px 24px !important;
+    position: relative;
+    z-index: 2;
+}
+
+/* Typography for light background */
+.appt2-content h2 { color: var(--navy) !important; }
+.appt2-content .eyebrow {
+    color: var(--pink) !important;
+    background: rgba(242,78,155,0.1) !important;
+    border: none !important;
+    justify-content: center;
+}
+
+/* The Form Widget */
+.appt2-form {
+    margin: 0 auto !important;
+    width: 100%;
+    max-width: 600px !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(0,0,0,0.06) !important;
+    border-radius: 24px !important;
+    padding: 40px !important;
+    box-shadow: 0 20px 40px rgba(9, 13, 24, 0.04) !important;
+}
+
+/* Clean Input Fields */
+.appt2-form .field, .appt2-form .cs-trigger, .appt2-form .cd-trigger {
+    background: #f8f9fa !important;
+    border: 1px solid rgba(0,0,0,0.08) !important;
+    color: var(--navy) !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+}
+.appt2-form .field::placeholder, .appt2-form .cs-trigger, .appt2-form .cd-trigger { color: rgba(9, 13, 24, 0.5) !important; }
+.appt2-form .field:focus {
+    background: #fff !important;
+    border-color: var(--pink) !important;
+    box-shadow: 0 0 0 4px rgba(242,78,155,0.1) !important;
+}
+.appt2-form select.field option { color: var(--navy) !important; }
+
+/* Custom Select Dropdowns Label Fix */
+.appt2-form .cs-trigger .cs-value.filled, .appt2-form .cd-trigger .cd-value.filled {
+    color: var(--navy) !important;
+}
+
+/* Phone Input Fixes */
+.appt2-form .phone-wrap {
+    display: flex;
+    align-items: center;
+    border-radius: 14px;
+    margin-bottom: 14px;
+    border: 1px solid rgba(0,0,0,0.08) !important;
+    background: #f8f9fa !important;
+    overflow: hidden;
+    padding: 0 !important;
+}
+.appt2-form .phone-wrap:focus-within {
+    background: #fff !important;
+    border-color: var(--pink) !important;
+    box-shadow: 0 0 0 4px rgba(242,78,155,0.1) !important;
+}
+.appt2-form .phone-wrap .field {
+    border: none !important;
+    background: transparent !important;
+    margin-bottom: 0 !important;
+    box-shadow: none !important;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.appt2-form .phone-wrap .field:focus {
+    box-shadow: none !important;
+}
+.appt2-form .phone-country-btn {
+    color: var(--navy) !important;
+    padding: 0 15px;
+    border-right: 1px solid rgba(0,0,0,0.08);
+    background: transparent !important;
+}
+[dir="rtl"] .appt2-form .phone-country-btn {
+    border-right: none;
+    border-left: 1px solid rgba(0,0,0,0.08);
+}
+.appt2-form .phone-sep { display: none !important; }
+
+/* Fix Date Picker Label */
+.appt2-form .slot-label, .appt2-form .time-slot, .appt2-form .slot-hint {
+    color: var(--navy) !important;
+}
+.appt2-form .time-slot {
+    background: #f8f9fa !important;
+    border-color: rgba(0,0,0,0.08) !important;
+}
+.appt2-form .time-slot.selected {
+    background: var(--pink) !important;
+    border-color: var(--pink) !important;
+    color: #fff !important;
+}
+
+/* Button */
+.appt2-form .btn-pink {
+    height: 54px;
+    font-size: 16px;
+    border-radius: 14px;
+    margin-top: 10px !important;
+    box-shadow: 0 10px 20px -5px rgba(242, 78, 155, 0.4);
+}
+
+@media (max-width: 768px) {
+    .appt2-form { padding: 24px !important; border-radius: 16px !important; }
+    .appt2-content { padding: 40px 20px !important; }
+}
+
+
+/* Fix visibility for dark glass buttons inside the light appt2 section (e.g. CTA Contact Us button) */
+.appt2 .btn-glass-dark {
+    background: rgba(9, 13, 24, 0.05) !important;
+    color: var(--navy) !important;
+    border: 1px solid rgba(9, 13, 24, 0.1) !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03) !important;
+    transition: all 0.3s ease !important;
+}
+
+.appt2 .btn-glass-dark:hover {
+    background: var(--navy) !important;
+    color: #fff !important;
+    border-color: var(--navy) !important;
+    box-shadow: 0 12px 20px -8px rgba(9, 13, 24, 0.4) !important;
+    transform: translateY(-2px);
+}
